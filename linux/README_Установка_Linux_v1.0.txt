@@ -1,6 +1,6 @@
 ===========================================================================
 Igareck AntiDPI Strategies + Bol-Van Zapret2
-CLI Version 1.0 | Linux Ubuntu/Debian x64 | ИНСТРУКЦИЯ ПО УСТАНОВКЕ
+CLI Version 1.0 | Linux x64 (Ubuntu/Debian, Fedora) | ИНСТРУКЦИЯ ПО УСТАНОВКЕ
 ===========================================================================
 ПРОГРАММА ГОТОВЫХ ANTI-DPI СТРАТЕГИЙ ОТ IGARECK НА БАЗЕ ZAPRET2 (BOL-VAN)
 В УДОБНОЙ CLI ОБОЛОЧКЕ ДЛЯ РАБОТЫ ЧЕРНЫХ СПИСКОВ VPN/TOR + YOUTUBE
@@ -43,8 +43,10 @@ bash INSTALL.sh --no-launch
   bash INSTALL.sh
 
 УСТАНОВКА
-Для графического режима нужен GNOME Terminal (в Ubuntu GNOME обычно уже
-установлен). Если его нет: sudo apt install gnome-terminal
+Для графического режима нужен GNOME Terminal (в Ubuntu/Fedora GNOME обычно уже
+установлен). Если его нет:
+  Ubuntu/Debian: sudo apt install gnome-terminal
+  Fedora:        sudo dnf install gnome-terminal
 Новые Python-модули не требуются: используется стандартная библиотека.
 
 Официальный Zapret2 скачивается архивом исходного репозитория Bol-Van:
@@ -96,11 +98,14 @@ https://cdn.gh-proxy.org/https://github.com/bol-van/zapret2/archive/refs/heads/m
 
 
 НЕОБХОДИМОЕ ОКРУЖЕНИЕ
-Ubuntu/Debian.
-Зависимости устанавливаются автоматически через apt-get:
-ca-certificates, curl, iproute2, nftables, kmod, fontconfig, build-essential,
-pkg-config, libnetfilter-queue-dev, libnfnetlink-dev, libmnl-dev,
-zlib1g-dev, libcap-dev, libluajit-5.1-dev.
+Ubuntu/Debian или Fedora/RHEL.
+Зависимости устанавливаются автоматически через apt-get (Debian/Ubuntu) или dnf (Fedora):
+- Debian/Ubuntu: ca-certificates, curl, iproute2, nftables, kmod, fontconfig,
+  build-essential, pkg-config, libnetfilter-queue-dev, libnfnetlink-dev,
+  libmnl-dev, zlib1g-dev, libcap-dev, libluajit-5.1-dev.
+- Fedora/RHEL: ca-certificates, curl, iproute, nftables, kmod, fontconfig,
+  gcc, make, pkg-config, libnetfilter_queue-devel, libnfnetlink-devel,
+  libmnl-devel, zlib-devel, libcap-devel, luajit-devel.
 Для меню/ярлыков нужна графическая сессия пользователя.
 Готовый nfqws2 и исходники Bol-Van в архив НЕ включены: исходники
 скачиваются при установке, движок компилируется под текущие Linux/CPU.

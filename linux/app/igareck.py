@@ -353,10 +353,12 @@ class Session:
 
 def interfaces():
     addresses = json.loads(run(['ip', '-j', '-4', 'addr', 'show', 'up']).stdout)
-    links = {x['ifindex']: x for x in json.loads(run(['ip', '-j', 'link']).stdout)}
+    links = {x['ifindex']: x for x in json.loads(run(['ip', '-j', 'link']).stdout) if 'ifindex' in x}
     excluded = {'tun', 'wireguard', 'gre', 'gretap', 'sit', 'ipip', 'vti'}
     result = []
     for item in addresses:
+        if not item or 'ifindex' not in item or 'ifname' not in item:
+            continue
         link = links.get(item['ifindex'], {})
         kind = link.get('linkinfo', {}).get('info_kind', '')
         if item['ifname'] == 'lo' or kind in excluded or Path('/sys/class/net', item['ifname'], 'tun_flags').exists():
@@ -647,7 +649,7 @@ def ask_parallel():
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Igareck + Zapret2 CLI 1.0 — Linux Ubuntu/Debian')
+    parser = argparse.ArgumentParser(description='Igareck + Zapret2 CLI 1.0 — Linux')
     parser.add_argument('action', nargs='?', default='menu', choices=('menu','start','youtube','list','show','check-engine','recover'))
     parser.add_argument('--skip-intro',action='store_true',help=argparse.SUPPRESS)
     parser.add_argument('--strategy', type=int)

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Ubuntu/Debian CLI 1.0 installer. Copyright Igor Krauch (github.com/igareck)."""
+"""CLI installer for Ubuntu/Debian (apt) and Fedora/RHEL (dnf). Copyright Igor Krauch (github.com/igareck)."""
 from __future__ import annotations
 import argparse
 from contextlib import ExitStack
@@ -20,12 +20,46 @@ import uuid
 import zipfile
 
 SOURCE = Path(__file__).resolve().parent
-PACKAGES = ['python3', 'ca-certificates', 'curl', 'iproute2', 'nftables', 'kmod',
-            'fontconfig','build-essential', 'pkg-config', 'libnetfilter-queue-dev', 'libnfnetlink-dev',
-            'libmnl-dev', 'zlib1g-dev', 'libcap-dev', 'libluajit-5.1-dev']
+PACKAGES_DEBIAN = ['python3', 'ca-certificates', 'curl', 'iproute2', 'nftables', 'kmod',
+                   'fontconfig', 'build-essential', 'pkg-config', 'libnetfilter-queue-dev', 'libnfnetlink-dev',
+                   'libmnl-dev', 'zlib1g-dev', 'libcap-dev', 'libluajit-5.1-dev']
+PACKAGES_FEDORA = ['python3', 'ca-certificates', 'curl', 'iproute', 'nftables', 'kmod',
+                   'fontconfig', 'gcc', 'make', 'pkg-config', 'libnetfilter_queue-devel', 'libnfnetlink-devel',
+                   'libmnl-devel', 'zlib-devel', 'libcap-devel', 'luajit-devel']
+PACKAGES = PACKAGES_DEBIAN
 from app_paths import FILE_LAYOUT, resource_path
 
 FILES = tuple(FILE_LAYOUT)
+
+
+def detect_distro():
+    os_release = {}
+    if Path('/etc/os-release').is_file():
+        try:
+            for line in Path('/etc/os-release').read_text(encoding='utf-8', errors='replace').splitlines():
+                line = line.strip()
+                if line and not line.startswith('#') and '=' in line:
+                    k, v = line.split('=', 1)
+                    os_release[k.strip()] = v.strip().strip('"').strip("'")
+        except OSError:
+            pass
+
+    distro_id = os_release.get('ID', '').lower()
+    distro_like = os_release.get('ID_LIKE', '').lower().split()
+
+    if (distro_id in ('fedora', 'rhel', 'centos', 'almalinux', 'rocky') or
+            any(d in distro_like for d in ('fedora', 'rhel')) or
+            Path('/etc/fedora-release').exists() or Path('/etc/redhat-release').exists()):
+        return 'fedora'
+    if (distro_id in ('debian', 'ubuntu', 'linuxmint', 'pop') or
+            any(d in distro_like for d in ('debian', 'ubuntu')) or
+            Path('/etc/debian_version').exists()):
+        return 'debian'
+    if shutil.which('dnf'):
+        return 'fedora'
+    if shutil.which('apt-get'):
+        return 'debian'
+    return None
 
 
 def digest(path):
@@ -177,8 +211,23 @@ def choose_prefix(value):
 def install(args):
     if sys.version_info < (3, 9):
         raise RuntimeError('Нужен Python 3.9 или новее.')
-    if not Path('/etc/debian_version').exists() or not shutil.which('apt-get'):
-        raise RuntimeError('Автоустановка этой версии поддерживает Ubuntu/Debian и производные с apt.')
+    distro = detect_distro()
+    if distro == 'debian' and shutil.which('apt-get'):
+        package_manager = 'apt-get'
+        packages = PACKAGES_DEBIAN
+        update_cmd = ['apt-get', 'update']
+        install_cmd = ['apt-get', 'install', '-y', '--no-install-recommends']
+    elif distro == 'fedora' and shutil.which('dnf'):
+        package_manager = 'dnf'
+        packages = PACKAGES_FEDORA
+        update_cmd = ['dnf', 'makecache']
+        install_cmd = ['dnf', 'install', '-y', '--setopt=install_weak_deps=False']
+    elif distro == 'debian':
+        raise RuntimeError('Обнаружен Debian/Ubuntu, но утилита apt-get не найдена.')
+    elif distro == 'fedora':
+        raise RuntimeError('Обнаружен Fedora/RHEL, но утилита dnf не найдена.')
+    else:
+        raise RuntimeError('Автоустановка этой версии поддерживает Ubuntu/Debian и Fedora/RHEL.')
     from cli_ui import show_intro, color
     from desktop_integration import graphical_user, create_shortcuts, remove_shortcuts
     from source_download import select_source
@@ -195,9 +244,10 @@ def install(args):
         print('----------------------')
         print('\nУстановка: '+str(prefix)+'\n484 стратегии: 45 Golden + 439 Silver. IPv4 TCP/TLS.')
         if not args.skip_deps:
-            subprocess.run(['apt-get','update'], check=True)
-            subprocess.run(['apt-get','install','-y','--no-install-recommends']+PACKAGES, check=True)
-        for name in ('cc','make','pkg-config','nft','ip','curl'):
+            subprocess.run(update_cmd, check=True)
+            subprocess.run(install_cmd+packages, check=True)
+        compiler = 'cc' if shutil.which('cc') else 'gcc'
+        for name in (compiler, 'make', 'pkg-config', 'nft', 'ip', 'curl'):
             if not shutil.which(name): raise RuntimeError('Не установлена зависимость: '+name)
         meta = select_source(json.loads(resource_path(SOURCE, 'upstream.json').read_text()), selection)
         prefix.parent.mkdir(parents=True, exist_ok=True)
@@ -319,7 +369,7 @@ if __name__ == '__main__':
     parser.add_argument('--engine', choices=('compatible','latest'), help='Версия официального Zapret2; без аргумента предлагается выбор')
     parser.add_argument('--shortcuts', choices=('yes','no'), help='Ярлыки для пользователя графической сессии; в терминальной среде пропускаются')
     parser.add_argument('--global-command', choices=('yes','no'), help='Создать глобальную команду запуска; при конфликте без аргумента предлагается выбор')
-    parser.add_argument('--skip-deps', action='store_true',help='Зависимости уже установлены через apt')
+    parser.add_argument('--skip-deps', action='store_true',help='Зависимости уже установлены через apt/dnf')
     parser.add_argument('--no-launch',action='store_true')
     parser.add_argument('--yes',action='store_true')
     parser.add_argument('--purge',action='store_true',help='При удалении полностью удалить папку этой установки, включая логи и изменённые файлы')

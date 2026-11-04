@@ -107,7 +107,7 @@ def show_header(root, artwork=True):
     architecture='x64' if machine in ('x86_64','amd64') else 'ARM64' if machine in ('aarch64','arm64') else machine
     rule='='*min(79,columns())
     lines=[rule,'  Igareck AntiDPI Strategies + Bol-Van Zapret2',
-           '  '+VERSION+' | Linux Ubuntu/Debian '+architecture,rule,
+           '  '+VERSION+' | Linux '+architecture,rule,
            '  ПРОГРАММА ГОТОВЫХ ANTI-DPI СТРАТЕГИЙ ОТ IGARECK НА БАЗЕ ZAPRET2 (BOL-VAN)',
            '  В УДОБНОЙ CLI ОБОЛОЧКЕ ДЛЯ РАБОТЫ ЧЕРНЫХ СПИСКОВ VPN/TOR + YOUTUBE',rule,
            '  AntiDPI от Igareck из репозитория:',
