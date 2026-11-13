@@ -17,11 +17,6 @@
 
 </div>
 
-<div align="center">
-
-<img src="assets/Igareck_AntiDPI_CLI_v1_UI.jpg" width="860"/>
-
-</div>
 
 ```diff
 + Программа изначально разработана с целью восстановления работы публичных подписок VPN/Tor!
