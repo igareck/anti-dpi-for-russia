@@ -240,8 +240,8 @@ def remove_shortcuts(record):
 if __name__ == '__main__':
     try:
         if len(sys.argv) == 3 and sys.argv[1] == '--launch' and sys.argv[2] in ('start', 'delete'):
-            from terminal_bootstrap import session
-            raise SystemExit(session('run' if sys.argv[2] == 'start' else 'uninstall', []))
+            from terminal_bootstrap import open_terminal
+            raise SystemExit(open_terminal('run' if sys.argv[2] == 'start' else 'uninstall', []))
         payload = json.load(sys.stdin)
         if os.geteuid() != int(payload['user']['uid']):
             raise RuntimeError('Создание ярлыков должно выполняться от имени пользователя.')

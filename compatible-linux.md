@@ -26,9 +26,9 @@ The original Linux design was built specifically for Ubuntu/Debian, introducing 
   - Alpine Linux uses `musl` libc instead of `glibc`.
   - Forcing compilation requires internet access to GitHub during the installation step and pollutes the target system with compilers and header files.
 
-### B. Hard Dependency on GNOME Terminal
-- **Current Behavior:** `terminal_bootstrap.py` searches specifically for `/usr/libexec/gnome-terminal-server`, communicates with GNOME Terminal via DBus, and injects a custom Fontconfig configuration for terminal ASCII art.
-- **Problem:** Non-GNOME environments (KDE Plasma with `konsole`, XFCE with `xfce4-terminal`, MATE, Cinnamon, Sway/i3/Hyprland with `kitty`/`alacritty`/`foot`, or headless servers) fail or require installing GNOME Terminal.
+### B. Desktop Shortcut Terminal Detection
+- **Current Behavior:** Scripts run in the calling terminal. Desktop shortcuts try `xdg-terminal-exec` and common emulators (`gnome-terminal`, `konsole`, `kitty`, etc.).
+- **Problem:** Environments without any known terminal emulator still need a manual `START.sh` / `DELETE.sh` launch.
 
 ### C. Ad-Hoc Script Installation vs Native Package Management
 - **Current Behavior:** `INSTALL.sh` invokes a Python script that calls package managers with `sudo`, copies files to `/opt/`, and manually tracks installations in `installation.json`.

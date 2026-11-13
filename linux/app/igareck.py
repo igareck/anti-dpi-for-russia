@@ -103,7 +103,7 @@ def choose_ports(session,explicit=None):
     if explicit is not None:
         session.scope=parse_ports(explicit);return session.scope
     print('\n----------------------\n')
-    print(cli_ui.color('Выберите порты назначения TCP, трафик которых будет перехватываться Zapret2.','96'))
+    print('Выберите порты назначения TCP, трафик которых будет перехватываться Zapret2.')
     cli_ui.paragraphs(['','Либо определенный номер порта, например 443, 80 и т.д.',
         'Либо диапазон, например 0–1023',
         'Либо введите комбинацию: несколько диапазонов и/или одиночных портов через запятую, например: 53, 80, 443, 1000-2000, 3000-4000',
@@ -391,7 +391,7 @@ def choose_interface(session, explicit=None):
     defaults.sort(key=lambda x: x.get('metric', 0))
     recommended = next((r['dev'] for r in defaults if any(i['name'] == r.get('dev') for i in items)), items[0]['name'])
     default = next(i for i in items if i['name'] == (previous if any(x['name'] == previous for x in items) else recommended))
-    print(cli_ui.color('\nВыберите активный Интернет-адаптер для работы AntiDPI Стратегий','96'))
+    print('\nВыберите активный Интернет-адаптер для работы AntiDPI Стратегий')
     width = cli_ui.columns()
     adapter_width = min(35,max(12,(width-18)//3))
     description_width = max(12,(width-adapter_width-18)//2)
@@ -402,7 +402,7 @@ def choose_interface(session, explicit=None):
     print('Активные (Up) индексы: '+', '.join(str(i['index']) for i in items)+'. Рекомендуется: '+str(rec['index'])+'.')
     if previous:
         print('Прошлый выбор: '+previous+(' (доступен).' if any(i['name']==previous for i in items) else ' (сейчас недоступен).'))
-    print(cli_ui.color('Нажмите Enter, если хотите использовать прошлый/рекомендуемый адаптер. Либо введите индекс из предложенного списка.','96'))
+    print('Нажмите Enter, если хотите использовать прошлый/рекомендуемый адаптер. Либо введите индекс из предложенного списка.')
     while True:
         answer = input(f'Индекс основного адаптера [Enter = {default["index"]}]: ').strip()
         selected = default if not answer else next((i for i in items if str(i['index'])==answer),None)
@@ -438,10 +438,6 @@ class Keyboard:
             termios.tcsetattr(sys.stdin, termios.TCSADRAIN, self.old)
 
 
-def colored(text, code='93'):
-    return cli_ui.color(text,code)
-
-
 def show_table(data):
     cli_ui.catalogue(data)
 
@@ -451,11 +447,11 @@ def activate(session, row):
     try:
         print(f'\n{"Golden" if row["Number"] <= 45 else "Silver"} #{row["Number"]}: {row["Name"]}')
         print('Интерфейс: '+session.interface+'; IPv4 TLS/TCP; порты '+session.scope)
-        print(colored(f'\nСЕЙЧАС РАБОТАЕТ СТРАТЕГИЯ {row["Number"]}!\n\n'
-                      'ЧТОБЫ СМЕНИТЬ СТРАТЕГИЮ — нажмите F1 (или s)\n'
-                      'ЧТОБЫ ПЕРЕЗАГРУЗИТЬ ТЕКУЩУЮ СТРАТЕГИЮ — нажмите F2 (или r)\n'
-                      'ЧТОБЫ СМЕНИТЬ СЕТЕВОЙ АДАПТЕР/ПОРТ — нажмите F3 (или i)\n'
-                      'ЧТОБЫ ПОЛНОСТЬЮ ОСТАНОВИТЬ РАБОТУ AntiDPI/ZAPRET2 - нажмите CTRL+C (или q)'))
+        print(f'\nСЕЙЧАС РАБОТАЕТ СТРАТЕГИЯ {row["Number"]}!\n\n'
+              'ЧТОБЫ СМЕНИТЬ СТРАТЕГИЮ — нажмите F1 (или s)\n'
+              'ЧТОБЫ ПЕРЕЗАГРУЗИТЬ ТЕКУЩУЮ СТРАТЕГИЮ — нажмите F2 (или r)\n'
+              'ЧТОБЫ СМЕНИТЬ СЕТЕВОЙ АДАПТЕР/ПОРТ — нажмите F3 (или i)\n'
+              'ЧТОБЫ ПОЛНОСТЬЮ ОСТАНОВИТЬ РАБОТУ AntiDPI/ZAPRET2 - нажмите CTRL+C (или q)')
         with Keyboard() as keyboard:
             while True:
                 if session.processes[queue][0].poll() is not None:
@@ -587,7 +583,7 @@ def scan(session, rows, numbers, parallel):
             file.write(json.dumps({'number':number,'status':status,'attempts':results},ensure_ascii=False)+'\n')
         completed+=1
         if successes:
-            print(cli_ui.color((', ' if found else '')+f'{number} ({status})','92'),end='',flush=True)
+            print((', ' if found else '')+f'{number} ({status})',end='',flush=True)
             found.append(number)
     try:
         with concurrent.futures.ThreadPoolExecutor(max_workers=parallel) as pool,Keyboard() as keyboard:
@@ -703,7 +699,7 @@ def main():
                 return
             if key == 'restart':
                 print(f'\nПЕРЕЗАГРУЗКА СТРАТЕГИИ {number}...'); continue
-            print(colored(f'\nСТРАТЕГИЯ {number} ОСТАНОВЛЕНА!\n', '91'))
+            print(f'\nСТРАТЕГИЯ {number} ОСТАНОВЛЕНА!\n')
             if key == 'adapter':
                 choose_interface(session);choose_ports(session);continue
             number = None

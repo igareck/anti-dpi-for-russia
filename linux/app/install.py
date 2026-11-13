@@ -21,10 +21,10 @@ import zipfile
 
 SOURCE = Path(__file__).resolve().parent
 PACKAGES_DEBIAN = ['python3', 'ca-certificates', 'curl', 'iproute2', 'nftables', 'kmod',
-                   'fontconfig', 'build-essential', 'pkg-config', 'libnetfilter-queue-dev', 'libnfnetlink-dev',
+                   'build-essential', 'pkg-config', 'libnetfilter-queue-dev', 'libnfnetlink-dev',
                    'libmnl-dev', 'zlib1g-dev', 'libcap-dev', 'libluajit-5.1-dev']
 PACKAGES_FEDORA = ['python3', 'ca-certificates', 'curl', 'iproute', 'nftables', 'kmod',
-                   'fontconfig', 'gcc', 'make', 'pkg-config', 'libnetfilter_queue-devel', 'libnfnetlink-devel',
+                   'gcc', 'make', 'pkg-config', 'libnetfilter_queue-devel', 'libnfnetlink-devel',
                    'libmnl-devel', 'zlib-devel', 'libcap-devel', 'luajit-devel']
 PACKAGES = PACKAGES_DEBIAN
 from app_paths import FILE_LAYOUT, resource_path
@@ -136,13 +136,13 @@ def get_archive(meta, temporary):
 
 
 def choose_engine(value=None):
-    from cli_ui import color, SEPARATOR
+    from cli_ui import SEPARATOR
     if value:
         return value
     if not sys.stdin.isatty():
         return 'compatible'
     print(SEPARATOR)
-    print(color('Выберите одно из двух.', '96'))
+    print('Выберите одно из двух.')
     print('1. Для установки максимально совместимой версии Zapret2 (рекомендуется) - нажмите 1')
     print('2. Для установки самой последней версии Zapret2 - нажмите 2')
     while True:
@@ -161,9 +161,9 @@ def choose_shortcuts(user, value=None):
         return value == 'yes'
     if not sys.stdin.isatty():
         return False
-    from cli_ui import color, SEPARATOR
+    from cli_ui import SEPARATOR
     print(SEPARATOR)
-    print(color('Создать папку с ярлыками Запуска и Удаления (Рабочий Стол и Главное Меню) + с подробным Описанием и Инструкциями?', '96'))
+    print('Создать папку с ярлыками Запуска и Удаления (Рабочий Стол и Главное Меню) + с подробным Описанием и Инструкциями?')
     while True:
         answer = input('Введите Да/Yes или Нет/No: ').strip().casefold()
         if answer in ('да', 'yes'):
@@ -174,25 +174,24 @@ def choose_shortcuts(user, value=None):
 
 
 def installation_summary(prefix, shortcuts, global_command=None):
-    from cli_ui import color
     print()
     if shortcuts:
-        print(color('Создана папка с удобными Ярлыками Запуска и Удаления на Рабочем Столе:'))
-        print(color(Path(shortcuts['folder']).name))
-        print(color('В папку также добавлено подробное Описание Стратегий и Инструкции в формате txt.'))
-        print(color('Добавлен ярлык запуска в Главное Меню программ.'))
-    print(color('Установлено в:'))
-    print(color(str(prefix)))
-    print(color('Исходные файлы запуска и удаления находятся в этой корневой папке.'))
+        print('Создана папка с удобными Ярлыками Запуска и Удаления на Рабочем Столе:')
+        print(Path(shortcuts['folder']).name)
+        print('В папку также добавлено подробное Описание Стратегий и Инструкции в формате txt.')
+        print('Добавлен ярлык запуска в Главное Меню программ.')
+    print('Установлено в:')
+    print(str(prefix))
+    print('Исходные файлы запуска и удаления находятся в этой корневой папке.')
     if shortcuts and not shortcuts.get('icons_set', True):
         print('Не удалось назначить значки в файловом менеджере; файлы запуска доступны.')
     print()
-    print(color('Запуск:', '92')+' sudo bash '+shlex.quote(str(prefix/'START.sh')))
+    print('Запуск: sudo bash '+shlex.quote(str(prefix/'START.sh')))
     if global_command:
-        print(color('Запуск из любой папки:', '92')+' igareck-antidpi')
-    print(color('Стандартное удаление (не удаляет логи и измененные файлы):', '91')+
+        print('Запуск из любой папки: igareck-antidpi')
+    print('Стандартное удаление (не удаляет логи и измененные файлы):'+
           ' sudo bash '+shlex.quote(str(prefix/'DELETE.sh')))
-    print(color('Полное удаление (вместе с корневой папкой и логами):', '91')+
+    print('Полное удаление (вместе с корневой папкой и логами):'+
           ' sudo bash '+shlex.quote(str(prefix/'DELETE.sh'))+' --purge')
     print()
 
@@ -228,14 +227,14 @@ def install(args):
         raise RuntimeError('Обнаружен Fedora/RHEL, но утилита dnf не найдена.')
     else:
         raise RuntimeError('Автоустановка этой версии поддерживает Ubuntu/Debian и Fedora/RHEL.')
-    from cli_ui import show_intro, color
+    from cli_ui import show_intro
     from desktop_integration import graphical_user, create_shortcuts, remove_shortcuts
     from source_download import select_source
     from global_command import prepare, register, remove as remove_global_command
     with ExitStack() as rollback:
         install_id=uuid.uuid4().hex
         show_intro(SOURCE, installing=True)
-        print(color('Нажмите Enter для установки в /opt/igareck-antidpi по умолчанию или укажите новую пустую папку.', '94'))
+        print('Нажмите Enter для установки в /opt/igareck-antidpi по умолчанию или укажите новую пустую папку.')
         prefix = choose_prefix(args.prefix)
         selection = choose_engine(args.engine)
         desktop_user = graphical_user()
@@ -382,8 +381,4 @@ if __name__ == '__main__':
         print('\nУстановка остановлена.'); exit_code = 130
     except Exception as error:
         print('ОШИБКА: '+str(error),file=sys.stderr); exit_code = 1
-    if (os.environ.get('IGARECK_TERMINAL_WINDOW') == '1' and sys.stdin.isatty() and
-            (args.no_launch or exit_code not in (0,130)) and exit_code != 130):
-        try:input('\nНажмите Enter, чтобы закрыть окно.\n')
-        except (EOFError, KeyboardInterrupt):pass
     raise SystemExit(exit_code)

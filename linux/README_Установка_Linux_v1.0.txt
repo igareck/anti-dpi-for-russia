@@ -43,11 +43,9 @@ bash INSTALL.sh --no-launch
   bash INSTALL.sh
 
 УСТАНОВКА
-Для графического режима нужен GNOME Terminal (в Ubuntu/Fedora GNOME обычно уже
-установлен). Если его нет:
-  Ubuntu/Debian: sudo apt install gnome-terminal
-  Fedora:        sudo dnf install gnome-terminal
 Новые Python-модули не требуются: используется стандартная библиотека.
+Ярлыки на Рабочем столе открывают любой доступный терминал (xdg-terminal-exec,
+GNOME Terminal, Konsole и т.п.).
 
 Официальный Zapret2 скачивается архивом исходного репозитория Bol-Van:
 https://github.com/bol-van/zapret2
@@ -100,10 +98,10 @@ https://cdn.gh-proxy.org/https://github.com/bol-van/zapret2/archive/refs/heads/m
 НЕОБХОДИМОЕ ОКРУЖЕНИЕ
 Ubuntu/Debian или Fedora/RHEL.
 Зависимости устанавливаются автоматически через apt-get (Debian/Ubuntu) или dnf (Fedora):
-- Debian/Ubuntu: ca-certificates, curl, iproute2, nftables, kmod, fontconfig,
+- Debian/Ubuntu: ca-certificates, curl, iproute2, nftables, kmod,
   build-essential, pkg-config, libnetfilter-queue-dev, libnfnetlink-dev,
   libmnl-dev, zlib1g-dev, libcap-dev, libluajit-5.1-dev.
-- Fedora/RHEL: ca-certificates, curl, iproute, nftables, kmod, fontconfig,
+- Fedora/RHEL: ca-certificates, curl, iproute, nftables, kmod,
   gcc, make, pkg-config, libnetfilter_queue-devel, libnfnetlink-devel,
   libmnl-devel, zlib-devel, libcap-devel, luajit-devel.
 Для меню/ярлыков нужна графическая сессия пользователя.

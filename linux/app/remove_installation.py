@@ -20,10 +20,8 @@ import uuid
 
 SCHEMA = 'igareck.zapret2.linux.install.v1'
 CONTROL = frozenset(('DELETE.sh', 'remove_installation.py', 'installation.json'))
-# Keep the same artwork renderer available for a later full removal.
 RETAIN = CONTROL | frozenset(('terminal_bootstrap.py', 'desktop_integration.py',
-    'cli_ui.py', 'app_paths.py', 'artwork.json', 'IgareckArtLinux16.ttf',
-    'IgareckArt_OFL.txt', 'LICENSE.txt'))
+    'cli_ui.py', 'app_paths.py', 'LICENSE.txt'))
 
 
 def digest(path):
@@ -170,11 +168,6 @@ def main():
     except Exception as error:
         print('ОШИБКА: '+str(error), file=sys.stderr)
         code = 1
-    if os.environ.get('IGARECK_TERMINAL_WINDOW') == '1' and sys.stdin.isatty():
-        try:
-            input('\nНажмите Enter, чтобы закрыть окно.\n')
-        except (EOFError, KeyboardInterrupt):
-            pass
     return code
 
 

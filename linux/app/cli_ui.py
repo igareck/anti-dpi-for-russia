@@ -1,25 +1,14 @@
 """Shared Linux CLI presentation. Copyright Igor Krauch (github.com/igareck)."""
 from __future__ import annotations
-import json
-from pathlib import Path
 import os
 import platform
 import shutil
-import subprocess
 import sys
 import textwrap
 import unicodedata
-import time
-from app_paths import resource_path
 
 VERSION = 'CLI Version 1.0'
 SEPARATOR = '----------------------'
-ARTWORK_BASE = 0x104000
-ARTWORK_FAMILY = 'Igareck Artwork 16'
-
-
-def color(text, code='93'):
-    return '\033['+code+'m'+text+'\033[0m' if sys.stdout.isatty() and 'NO_COLOR' not in os.environ else text
 
 
 def columns():
@@ -41,68 +30,27 @@ def wrap(text,width):
 def table(headers, rows, widths):
     border='+'+'+'.join('-'*(w+2) for w in widths)+'+'
     print(border)
-    def emit(values, heading=False):
+    def emit(values):
         cells=[wrap(value,w) for value,w in zip(values,widths)]
         for i in range(max(map(len,cells))):
             line='|'
             for parts,w in zip(cells,widths):
                 item=parts[i] if i<len(parts) else ''
                 line+=' '+item+' '*(w-cell_width(item)+1)+'|'
-            print(color(line,'96') if heading else line)
-    emit(headers,True);print(border)
+            print(line)
+    emit(headers);print(border)
     for row in rows:
         emit(row);print(border)
 
 
-def paragraphs(lines, code=None):
+def paragraphs(lines):
     # A newline here is a paragraph boundary, not a screen-width boundary.
     # Let the terminal create soft wraps that it can reflow on window resize.
     for line in lines:
-        print(color(str(line),code) if code else str(line))
+        print(str(line))
 
 
-def tile_artwork_lines(root):
-    # All 400x145 original shade cells are packed into these color-font tiles.
-    # No terminal font change, image resizing or low-resolution substitution.
-    data=json.loads(resource_path(root, 'artwork.json').read_text(encoding='utf-8'))
-    rows=data['tiles']
-    if len(rows)!=29 or any(len(row)!=100 for row in rows):
-        raise ValueError('Некорректные размеры исходного рисунка.')
-    return rows
-
-
-def tile_font_available():
-    if os.environ.get('TERM')=='linux' or os.environ.get('SSH_CONNECTION'):
-        return False
-    # A fresh root-side fc-match cannot describe an already-running terminal's
-    # Pango font map. Print PUA tiles only inside the prepared native renderer.
-    return os.environ.get('IGARECK_ARTWORK_RENDERER') == 'fresh-gnome-fontconfig-v1'
-
-
-def show_artwork(root):
-    # The supplied image occupies 100 cells by 29 lines. Do not substitute
-    # Braille/dither or resample the original source when the window is narrow.
-    if not tile_font_available():
-        if os.environ.get('TERM') != 'linux' and not os.environ.get('SSH_CONNECTION'):
-            print('Для исходного логотипа запустите INSTALL.sh, START.sh или DELETE.sh в графической сессии GNOME Terminal.')
-        return
-    if columns()<100 and sys.stdin.isatty():
-        size=shutil.get_terminal_size((80,24))
-        print('\033[8;'+str(max(size.lines,40))+';110t',end='',flush=True)
-        for _ in range(8):
-            if columns()>=100:break
-            time.sleep(.05)
-        if columns()<100:
-            input('Для исходного рисунка увеличьте ширину окна минимум до 100 символов и нажмите Enter.\n')
-    if columns()<100:
-        print('Исходный рисунок требует ширину окна не менее 100 символов.')
-        return
-    print()
-    for line in tile_artwork_lines(root):print(color(line,'38;2;255;255;255;48;2;12;12;12'))
-    print()
-
-
-def show_header(root, artwork=True):
+def show_header(root):
     machine=platform.machine().lower()
     architecture='x64' if machine in ('x86_64','amd64') else 'ARM64' if machine in ('aarch64','arm64') else machine
     rule='='*min(79,columns())
@@ -118,9 +66,7 @@ def show_header(root, artwork=True):
            '  Zapret2 от Bol-Van, сборка для Linux из репозитория:',
            '  https://github.com/bol-van/zapret2',
            '  Скачивается напрямую или через прокси из оригинального репозитория',rule]
-    paragraphs(lines,'96')
-    if artwork and sys.stdout.isatty():
-        show_artwork(root)
+    paragraphs(lines)
 
 
 def pause(message):
@@ -138,7 +84,7 @@ def show_intro(root, prefix=None, installing=False):
       '   Движок: '+engine_path,
       '2. Добавьте в исключения антивируса процессы используемых VPN/Tor-клиентов и их ядер.',
       '3. Если антивирус продолжает мешать соединениям, временно отключите его для проверки.',
-      '   Эти инструкции относятся к установленному антивирусу; UFW и системный брандмауэр программа не отключает.'],'93')
+      '   Эти инструкции относятся к установленному антивирусу; UFW и системный брандмауэр программа не отключает.'])
     pause('Нажмите Enter, чтобы продолжить и прочитать ЗАМЕТКИ')
     paragraphs(['','ЗАМЕТКИ:',
       '1. Программа с готовыми AntiDPI стратегиями разработана специально для восстановления работоспособности VPN-конфигураций Черных Списков, Tor и YouTube.',
@@ -150,14 +96,14 @@ def show_intro(root, prefix=None, installing=False):
       '   В свою очередь — отрицательный тест на YouTube абсолютно не значит, что стратегия не работает с VPN, часто наоборот.',
       '   Бывает, что стратегия не дает прямой доступ на YouTube, но при этом пингует самое максимальное число VPN-конфигураций.',
       '5. Стратегии Golden для VPN/Tor/YouTube могут работать лучше, чем Silver.',
-      '6. Набор стратегий протестирован на российских кабельных/мобильных сетях.'],'93')
+      '6. Набор стратегий протестирован на российских кабельных/мобильных сетях.'])
     pause('Нажмите Enter, чтобы продолжить установку' if installing else 'Нажмите Enter, чтобы продолжить работу')
 
 
 def catalogue(data):
     print('\n######################\n')
     paragraphs(['КАТАЛОГ (Октябрь 2026): Golden+Silver; 484 уникальных AntiDPI стратегии, подобранные специально для российских сетей.',
-                'Golden: 1–45 (45). Silver: 46–484 (439).'],'96')
+                'Golden: 1–45 (45). Silver: 46–484 (439).'])
     print('\n'+SEPARATOR+'\n\nВводите номер стратегии из колонки «Номера».')
     family_width=max(10,min(65,columns()-40))
     rows=[]
@@ -169,7 +115,7 @@ def catalogue(data):
 
 
 def selection_prompt():
-    print('\n'+color('Выберите один из двух вариантов.','96'))
+    print('\nВыберите один из двух вариантов.')
     paragraphs(['1. Либо введите номер AntiDPI-стратегии из таблицы (0 — выход из программы)',
       '2. Либо, чтобы проверить диапазон стратегий на доступ к YouTube, наберите слово "Youtube" (без учета регистра) и далее следуйте указаниям'])
     print(SEPARATOR)
