@@ -1,0 +1,1 @@
+package android.os;public class PowerManager {public static final int PARTIAL_WAKE_LOCK=1;public WakeLock newWakeLock(int n,String s){return new WakeLock();}public static class WakeLock {boolean held;public void setReferenceCounted(boolean b){}public boolean isHeld(){return held;}public void acquire(){held=true;}public void release(){held=false;}}}

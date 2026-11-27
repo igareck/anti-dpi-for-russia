@@ -1,0 +1,62 @@
+{
+  "abis": [
+    "arm64-v8a",
+    "armeabi-v7a",
+    "x86_64"
+  ],
+  "activation_source_pins": {
+    "libadb": "c849886ebc6d48e7b46d967e78a6bb65c90c3b74",
+    "spake2-c": "0d15933e5ba3e662cb01245a7ac0dc9fca3eac31",
+    "spake2-java": "7615ddd680b990e14513ebb66eac4cb0dbf82464"
+  },
+  "app_license": "GPL-3.0-or-later",
+  "application_id": "com.igareck.antidpi",
+  "author": "Igor Krauch (github.com/igareck)",
+  "build_tools": {
+    "build_tools": "35.0.0",
+    "jdk": "17 or 21",
+    "ndk": "r28c",
+    "sdk": "35"
+  },
+  "catalogue_source": {
+    "archive": "Igareck_AntiDPI_CLI_v1.0_Linux_x64.tar.gz",
+    "sha256": "8d92b3996e6fbaa024e879914604f672ab8da7a4ddd106c114e876a234eb508b",
+    "upstream": "https://github.com/igareck/anti-dpi-for-russia"
+  },
+  "min_sdk": 30,
+  "name": "Igareck AntiDPI Android",
+  "native_libraries_sha256": {
+    "lib/arm64-v8a/libconscrypt_jni.so": "fd5a080ced130e2c2e7982cb9c82b5601fc84df61f41129dd0d3ecdbf2c96155",
+    "lib/arm64-v8a/libnfqws2.so": "fc11f03a4a3d879bc9b36dc5c019b5f718360c3a286cca115f1fc06baf953543",
+    "lib/arm64-v8a/libspake2.so": "d0f7c1289a2fb313de26cb38896d0e4eca829afc002609cf15178b1e72b410e0",
+    "lib/armeabi-v7a/libconscrypt_jni.so": "009ee440620105adefff81c5af4fafd23aebefff5b8d03d7180212c02983b532",
+    "lib/armeabi-v7a/libnfqws2.so": "de1c4b8dad63616888b89f3f8c1d4f81048559b008228a58514d4a28cad59e39",
+    "lib/armeabi-v7a/libspake2.so": "89e3f7e680e7e1e5e15aa2bbc7be92830a2a9f60df86d6bdb01feae6100f44a2",
+    "lib/x86_64/libconscrypt_jni.so": "9ee2eccb596cbbf5316572c11efa5ce4c2612ceba540c215b360e2750a665d87",
+    "lib/x86_64/libnfqws2.so": "95ed3482d53a7ddeff78786ea07e27d8e0bc5e0ed10f372bce8f078419a261f6",
+    "lib/x86_64/libspake2.so": "e7621451cf4028ae8e2e279a7e90cdda168eca66d9260a34947928d698283092"
+  },
+  "network": {
+    "analytics": false,
+    "bind": "127.0.0.1",
+    "default_port": 1080,
+    "packet_backend_min_sdk": 30,
+    "packet_intercepted_tcp_ports": "1-65535",
+    "packet_intercepted_udp_ports": "1-65535",
+    "packet_ipv6": false,
+    "packet_tcp_stack": "lwIP 2.2.1",
+    "packet_transport": "framework TAP / Ethernet tethering via embedded-ADB-launched UID 2000 worker",
+    "socks_udp_frag_supported": false,
+    "udp_associate": true,
+    "udp_bind": "127.0.0.1:ephemeral per association",
+    "udp_default_enabled": false,
+    "udp_over_tcp": false,
+    "vpn_service": false
+  },
+  "profile_count": 484,
+  "project_url": "https://github.com/igareck/anti-dpi-for-russia",
+  "target_sdk": 35,
+  "usb_content_authority": "com.igareck.antidpi.usb",
+  "version": "1.0",
+  "version_code": 49
+}

@@ -1,0 +1,1 @@
+package android.app;import android.os.*;import android.content.*;public class RemoteInput {public static Bundle getResultsFromIntent(Intent i){return null;}public static class Builder {public Builder(String s){}public Builder setLabel(String s){return this;}public RemoteInput build(){return new RemoteInput();}}}

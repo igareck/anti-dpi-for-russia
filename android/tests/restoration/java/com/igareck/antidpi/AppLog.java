@@ -1,0 +1,1 @@
+package com.igareck.antidpi;import java.util.*;final class AppLog {static final List<String> lines=new java.util.concurrent.CopyOnWriteArrayList<>();static void line(String a,String b){lines.add(a+":"+b);}}

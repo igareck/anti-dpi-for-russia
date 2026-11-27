@@ -1,0 +1,10 @@
+/build/
+/dist/
+/tests/results/
+__pycache__/
+*.pyc
+*.p12
+*.jks
+*.keystore
+*.idsig
+*.log

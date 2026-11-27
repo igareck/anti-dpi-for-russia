@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ru" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="color-scheme" content="only light">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'; connect-src 'none'">
+  <title>Igareck AntiDPI</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <script src="dashboard.js" defer></script>
+</head>
+<body>
+<div class="viewport">
+  <main id="dashboard" data-status="stopped">
+    <header class="masthead">
+      <h1>Igareck AntiDPI</h1>
+      <div class="version">Android v1.0</div>
+      <div class="masthead-links">
+        <button type="button" class="repository" data-action="github">github.com/igareck/anti-dpi-for-russia</button>
+        <button type="button" class="repository" data-action="vpn-configs">github.com/igareck/vpn-configs-for-russia</button>
+        <button type="button" class="telegram" data-action="telegram">t.me/igareq</button>
+      </div>
+    </header>
+    <section class="status surface" aria-live="polite" aria-atomic="true">
+      <h2 data-ru="Статус работы" data-en="Status">Статус работы</h2>
+      <div id="status">Остановлен</div>
+      <div id="apply-hint" hidden></div>
+    </section>
+    <nav class="pages">
+      <button type="button" data-action="websites" data-ru="Проверка сайтов" data-en="Website checks">Проверка сайтов</button>
+      <button type="button" data-action="instructions" data-ru="Инструкции" data-en="Instructions">Инструкции</button>
+      <button type="button" data-action="logs" data-ru="Логи и лицензии" data-en="Logs and licenses">Логи и лицензии</button>
+    </nav>
+    <section class="settings surface">
+      <div class="configuration">
+        <div class="local">
+          <label class="port"><span data-ru="Порт" data-en="Port">Порт</span><input type="text" id="port" inputmode="numeric" maxlength="5" value="1080" autocomplete="off"></label>
+          <label class="group" for="group" data-ru="TCP-стратегии по группам" data-en="TCP strategy groups">TCP-стратегии по группам</label>
+          <div class="select"><button type="button" class="select-trigger" id="group" role="combobox" aria-expanded="false" aria-controls="dropdown-options" disabled><span id="group-value"></span></button></div>
+        </div>
+        <button type="button" class="module" id="module" data-action="module">
+          <img src="module-off.png" width="76" height="59" alt="">
+          <span data-ru="Сетевой модуль" data-en="Network module">Сетевой модуль</span>
+        </button>
+      </div>
+      <input type="search" id="search" class="search" maxlength="200" autocomplete="off" spellcheck="false" placeholder="Поиск в группе по номеру или слову" aria-label="Поиск в группе по номеру или слову">
+      <div class="profiles">
+        <div class="select"><button type="button" class="select-trigger" id="profiles" role="combobox" aria-expanded="false" aria-controls="dropdown-options" disabled><span id="profiles-value"></span></button></div>
+        <button type="button" id="favorite" data-action="favorite" aria-label="Добавить или убрать из избранного">☆</button>
+      </div>
+      <div class="description" id="description"></div>
+      <div class="option">
+        <label><input id="udp" type="checkbox"><span data-ru="UDP через SOCKS" data-en="UDP over SOCKS">UDP через SOCKS</span></label>
+        <div class="select"><button type="button" class="select-trigger" id="quic" role="combobox" aria-expanded="false" aria-controls="dropdown-options" disabled><span id="quic-value"></span></button></div>
+      </div>
+      <div class="option">
+        <label><input id="discordEnabled" type="checkbox" disabled><span>Discord/STUN</span></label>
+        <div class="select"><button type="button" class="select-trigger" id="discord" role="combobox" aria-expanded="false" aria-controls="dropdown-options" disabled><span id="discord-value"></span></button></div>
+      </div>
+      <div class="usage" lang="ru">
+        <strong>Подходит для любых VPN/Tor-клиентов.</strong> Для работы <strong>VPN/Tor</strong> обычно хватает <strong>TCP</strong>-стратегий.<br>
+        Для голосовых звонков <strong>Discord напрямую</strong> включите <strong>UDP через SOCKS</strong> и <strong>Discord/STUN</strong>, затем выберите обе стратегии.
+      </div>
+      <div class="usage" lang="en" hidden>
+        <strong>Works with VPN and Tor clients.</strong> <strong>TCP</strong> strategies are usually enough for <strong>VPN and Tor.</strong><br>
+        For direct <strong>Discord</strong> voice calls, enable <strong>UDP over SOCKS</strong> and <strong>Discord/STUN</strong>, then select both strategies.
+      </div>
+    </section>
+    <section class="actions">
+      <div class="strategy-controls">
+        <div class="launch-area">
+          <button type="button" class="launch image-control press-control" data-action="start" id="launch" aria-label="Запустить или применить стратегию">
+            <img class="strategy-off" src="strategy-off.png" width="384" height="384" alt="">
+            <img class="strategy-on" src="strategy-on.png" width="384" height="384" alt="">
+          </button>
+          <div class="launch-note" aria-hidden="true">
+            <img class="launch-arrow" src="start-arrow.png" width="136" height="83" alt="">
+            <img class="launch-text" id="launch-text" src="start-ru.png" width="368" height="72" alt="">
+          </div>
+        </div>
+        <div class="stop-area">
+          <button type="button" class="stop image-control press-control" data-action="stop" id="stop" aria-label="Остановить стратегии" disabled>
+            <img src="stop.png" width="84" height="88" alt="">
+          </button>
+          <div class="stop-note" aria-hidden="true">
+            <img class="stop-arrow" src="stop-arrow.png" width="105" height="30" alt="">
+            <img class="stop-text" src="stop-word.png" width="92" height="50" alt="">
+          </div>
+        </div>
+      </div>
+      <button type="button" class="language image-control" id="language" aria-label="Tap to switch to English">
+        <span class="language-art" aria-hidden="true">
+          <img id="language-text" src="language-en.png" width="404" height="54" alt="">
+        </span>
+      </button>
+    </section>
+  </main>
+</div>
+<div id="dropdown" hidden><div id="dropdown-options" role="listbox"></div></div>
+</body>
+</html>

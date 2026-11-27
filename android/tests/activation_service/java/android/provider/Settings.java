@@ -1,0 +1,1 @@
+package android.provider;public class Settings {public static class Global {public static int value=-1;public static boolean denied;public static String lastKey;public static int getInt(android.content.ContentResolver r,String key,int fallback){lastKey=key;if(denied)throw new SecurityException("fixture");return value;}}}

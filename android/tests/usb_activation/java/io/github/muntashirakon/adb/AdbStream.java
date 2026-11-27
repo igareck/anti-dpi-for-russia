@@ -1,0 +1,1 @@
+package io.github.muntashirakon.adb;import java.io.*;public class AdbStream implements AutoCloseable {public InputStream openInputStream(){return new ByteArrayInputStream(new byte[0]);}public OutputStream openOutputStream(){return new ByteArrayOutputStream();}public void close()throws IOException{}}

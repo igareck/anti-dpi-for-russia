@@ -1,0 +1,9 @@
+{
+  "repository": "https://github.com/igareck/anti-dpi-for-russia",
+  "commit": "6ebb6cb3dce43fab78b1737e6682390a2b00436f",
+  "files": [
+    "linux/app/youtube_probe.py",
+    "linux/app/igareck.py",
+    "linux/app/global_command.py"
+  ]
+}

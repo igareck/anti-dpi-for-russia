@@ -28,3 +28,7 @@
 *.dll binary
 *.sys binary
 *.pdf binary
+*.apk binary
+*.aar binary
+*.jar binary
+*.so binary

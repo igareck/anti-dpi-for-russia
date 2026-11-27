@@ -1,0 +1,1 @@
+package android.app;public class NotificationManager {public static final int IMPORTANCE_LOW=2,IMPORTANCE_HIGH=4;public NotificationChannel channel;public Notification last;public void createNotificationChannel(NotificationChannel c){channel=c;}public void notify(int n,Notification a){last=a;}}

@@ -1,0 +1,28 @@
+<h3>Exclude Igareck AntiDPI from InviZible Pro</h3>
+<p>1. On the main screen, open ⋮ and select VPN Mode.</p>
+<p>2. Open the side menu ☰ → “Quick settings”.<br>
+If “Route all traffic through Tor” is enabled, tap “Exclude apps” under “Tor settings”.<br>
+If “Route all traffic through Tor” is off, tap “Choose apps” under “Tor settings”.</p>
+<p>3. Find Igareck AntiDPI and tap “Exclude completely”. Go back to save your selection.<br>
+InviZible Pro now excludes Igareck AntiDPI.</p>
+<h3>Configure the outbound SOCKS5 proxy</h3>
+<p>1. Open ☰ → “Common settings”. Under “Proxy”, tap “Use SOCKS5 proxy”.</p>
+<p>2. Set the proxy server to 127.0.0.1 and the proxy port to @PORT@. Leave “Username” and “Password” blank.</p>
+<p>3. On the same screen, tap “Exclude apps”, select Igareck AntiDPI and go back.</p>
+<p>4. Select only “Use proxy for Tor”, tap “Save and activate”, and return to the main screen.</p>
+<h3>Access websites through Tor</h3>
+<p>1. To use a bridge, open ☰ → “Quick settings”. Under “Tor settings”, tap “Bridges” → “Add bridges”, paste the bridge lines from the GitHub subscription and tap OK.</p>
+<p>2. On the “Bridges” screen, select “Use your own bridges”. Select obfs4, webtunnel or vanilla from the adjacent menu. Turn on each bridge you want to use and go back.</p>
+<p>3. If you enabled “Route all traffic through Tor”, app selection is optional.<br>
+If “Route all traffic through Tor” is off, open “Choose apps” and enable “Use with Tor” for your browser or app.</p>
+<p>4. On the main screen, select “Hide IP with TOR” and “Protect with DNSCRYPT”, then tap START. Confirm Android’s VPN request if it appears. Wait until Tor is running and open the website.<br>
+InviZible Pro connects to Tor through the local Igareck SOCKS5 proxy.</p>
+<h3>Access websites directly</h3>
+<p>1. Open ☰ → “Common settings” → “Use SOCKS5 proxy”. Enable “Use proxy for apps that work without Tor” and tap “Save and activate”.</p>
+<p>2. On the main screen, tap STOP if the modules are running. Clear “Hide IP with TOR”, select “Protect with DNSCRYPT” and tap START.<br>
+DNSCrypt keeps the InviZible Pro VPN active when Tor is stopped.</p>
+<p>3. Open the website you want (YouTube, Discord, LinkedIn or others), or use an app such as Discord.<br>
+InviZible Pro sends the TCP connection through the local Igareck SOCKS5 proxy.</p>
+<p>For Discord voice calls, use a client that supports UDP.<br>
+Tor and the InviZible Pro direct mode described here proxy TCP traffic only.<br>
+For calls, use the local SOCKS5 profile in Karing and enable “UDP over SOCKS” and “Discord/STUN” in Igareck AntiDPI.</p>

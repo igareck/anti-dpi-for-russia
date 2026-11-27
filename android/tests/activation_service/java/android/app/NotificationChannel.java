@@ -1,0 +1,1 @@
+package android.app;public class NotificationChannel {public final String id;public final int importance;public NotificationChannel(String id,String name,int n){this.id=id;importance=n;}public void setDescription(String s){}}

@@ -1,0 +1,1 @@
+package android.net;public class NetworkCapabilities {public static final int TRANSPORT_WIFI=1,TRANSPORT_VPN=4,NET_CAPABILITY_NOT_VPN=15,NET_CAPABILITY_INTERNET=12;private final int t;public NetworkCapabilities(int t){this.t=t;}public boolean hasCapability(int n){return n==NET_CAPABILITY_NOT_VPN&&t!=TRANSPORT_VPN;}public boolean hasTransport(int n){return n==t;}}

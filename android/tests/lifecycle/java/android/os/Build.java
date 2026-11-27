@@ -1,0 +1,1 @@
+package android.os;public class Build {public static String FINGERPRINT="fixture/build/test",MODEL="host-fixture";public static class VERSION {public static int SDK_INT=35;}public static final String[] SUPPORTED_ABIS={"host-fixture"};}

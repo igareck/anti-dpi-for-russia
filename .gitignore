@@ -32,3 +32,11 @@ _state/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Android release output and local signing material.
+*.apk
+*.idsig
+*.jks
+*.p12
+*.keystore
+Igareck_Android_Release_Password.txt

@@ -1,0 +1,1 @@
+package android.net.wifi;public class WifiInfo {private final SupplicantState state;public WifiInfo(SupplicantState s){state=s;}public SupplicantState getSupplicantState(){return state;}public int getNetworkId(){return -1;}public String getSSID(){return "<unknown ssid>";}public String getBSSID(){return "02:00:00:00:00:00";}}

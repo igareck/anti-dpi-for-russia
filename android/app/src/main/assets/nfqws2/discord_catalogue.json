@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "status": "D1-D8 retained; Discord/STUN checkbox enables processing",
+  "selector": "IPv4 UDP 1-65535, L7 stun/discord, payload stun/discord_ip_discovery, first 10 outgoing data packets",
+  "upstream_example": "https://github.com/bol-van/zapret2/blob/master/docs/readme.md",
+  "profiles": [
+    {
+      "candidate_id": "D1",
+      "name_ru": "нули 16 Б ×2",
+      "args": [
+        "--lua-desync=fake:blob=0x00000000000000000000000000000000:repeats=2"
+      ],
+      "recipe_sha256": "72a18656b560eb04bf7addde412030faa3128246da99144200bf2e8a4386b655",
+      "control": false
+    },
+    {
+      "candidate_id": "D2",
+      "name_ru": "нули 16 Б ×6",
+      "args": [
+        "--lua-desync=fake:blob=0x00000000000000000000000000000000:repeats=6"
+      ],
+      "recipe_sha256": "f4c3ba0d574e22b34a05bc26abdd4470458a099848dbb571d770d8e6168f965d",
+      "control": false
+    },
+    {
+      "candidate_id": "D3",
+      "name_ru": "нули 16 Б ×12",
+      "args": [
+        "--lua-desync=fake:blob=0x00000000000000000000000000000000:repeats=12"
+      ],
+      "recipe_sha256": "754404b1f2fa3d3b3406e1bee445de457028c4c0e4e4bb706f59d9ef4571e528",
+      "control": false
+    },
+    {
+      "candidate_id": "D4",
+      "name_ru": "нули 64 Б ×2",
+      "args": [
+        "--lua-desync=fake:blob=0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000:repeats=2"
+      ],
+      "recipe_sha256": "dd5f875c6fbedc9e6f6072a2750e6a786250d7217bb4ccb1bd37be8cf104ed48",
+      "control": false
+    },
+    {
+      "candidate_id": "D5",
+      "name_ru": "нули 64 Б ×6",
+      "args": [
+        "--lua-desync=fake:blob=0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000:repeats=6"
+      ],
+      "recipe_sha256": "33d572c7380961d2a588a157308e58bb5dee7f57dd97c132cf0425f564e69bbf",
+      "control": false
+    },
+    {
+      "candidate_id": "D6",
+      "name_ru": "QUIC-фейк ×2",
+      "args": [
+        "--lua-desync=fake:blob=fake_default_quic:repeats=2"
+      ],
+      "recipe_sha256": "f4715984a81271ff2dab7c2578cab32e718f8e38c78054b1da2f456a251cac57",
+      "control": false
+    },
+    {
+      "candidate_id": "D7",
+      "name_ru": "QUIC-фейк ×6",
+      "args": [
+        "--lua-desync=fake:blob=fake_default_quic:repeats=6"
+      ],
+      "recipe_sha256": "695a1f4c5c52e7b3969e4f42f864bd4dbbf130d43487e3b4dcbe883d7f0b1143",
+      "control": false
+    },
+    {
+      "candidate_id": "D8",
+      "name_ru": "нули 64 Б · TTL 2 · ×6",
+      "args": [
+        "--lua-desync=fake:blob=0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000:ip_ttl=2:repeats=6"
+      ],
+      "recipe_sha256": "2bbf314d4b5019282fb561b51a044747218b4259bbcf6b29fb39163b5e0561fe",
+      "control": false
+    }
+  ],
+  "profile_count": 8,
+  "disabled_by": "Discord/STUN checkbox"
+}

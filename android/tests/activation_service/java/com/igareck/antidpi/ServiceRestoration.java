@@ -1,0 +1,1 @@
+package com.igareck.antidpi;import android.content.Context;final class ServiceRestoration {static void activated(Context c){}static void manual(Context c){}static void pause(Context c){}static void cancelCurrent(){}static String snapshot(Context c){return "{}";}}

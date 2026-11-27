@@ -1,0 +1,56 @@
+АКТИВАЦИЯ СЕТЕВОГО МОДУЛЯ ЧЕРЕЗ USB — ANDROID v1.0
+
+На Android включите «Отладка по USB» в параметрах разработчика.
+Подключите устройство к ПК кабелем передачи данных и разблокируйте
+экран. Подтвердите запрос Android «Разрешить отладку по USB?».
+
+Скачайте Platform-Tools для своей ОС и распакуйте архив целиком.
+https://developer.android.com/tools/releases/platform-tools
+
+Windows
+
+Откройте обычный PowerShell в папке platform-tools с adb.exe.
+
+.\adb.exe devices -l
+
+Linux и macOS
+
+Откройте терминал в папке platform-tools.
+
+./adb devices -l
+
+Продолжение для всех ОС
+
+Устройство должно появиться со статусом device. При unauthorized
+подтвердите USB-отладку на экране Android и повторите devices -l.
+Если устройство отсутствует, проверьте кабель и подключение. Для
+Windows может требоваться драйвер производителя, для Linux — правила
+udev и доступ к устройству.
+https://developer.android.com/studio/run/device
+
+На Android откройте «Сетевой модуль» → «Активация через USB (если нет
+Wi-Fi, при наличии ПК)» → «Запуск через USB». При статусе «Ожидается
+USB-команда» выполните в терминале команду своей ОС в течение трёх минут.
+
+Windows PowerShell
+
+.\adb.exe -d shell "content read --uri content://com.igareck.antidpi.usb/start | sh"
+
+Linux и macOS
+
+./adb -d shell 'content read --uri content://com.igareck.antidpi.usb/start | sh'
+
+Дождитесь «Сетевой модуль активен» в Igareck (Android) и IGARECK_WORKER_READY в
+терминале (ПК). После этого можно выбрать стратегию и запустить её.
+
+Для одного устройства по кабелю подходит -d. Если подключено несколько
+устройств, укажите серийный номер своего устройства из devices -l
+с помощью -s SERIAL вместо -d.
+
+При истечении времени нажмите «Запуск через USB» ещё раз. Если при
+смене режима подключения сетевой модуль завершился, повторите
+активацию с уже подключённым кабелем.
+
+START_IGARECK_USB.cmd и start_igareck_usb.sh выполняют те же команды.
+Скрипт Linux/macOS использует adb из PATH. Для распакованного SDK можно
+задать полный путь к adb в переменной окружения IGARECK_ADB.

@@ -1,0 +1,94 @@
+{
+  "version": "20261112_quic_v1",
+  "hash_format": "SHA256 of UTF-8 compact JSON array of ordered original Args, with separators=(comma,colon); platform --wf-* capture switches excluded and retained in evidence.",
+  "profiles": [
+    {
+      "candidate_id": "Q1",
+      "args": [
+        "--payload=quic_initial",
+        "--lua-desync=send:ipfrag:ipfrag_pos_udp=8",
+        "--lua-desync=drop"
+      ],
+      "recipe_sha256": "7015cb6adb7bb8d5103fdd517e56c56f3d6fdeb28db4379c21636617942ff566",
+      "passed_hosts": [
+        "cdn.discordapp.com",
+        "discord.com",
+        "hetzner.com",
+        "media.discordapp.net",
+        "www.hetzner.com"
+      ],
+      "measured_destination_ports": [
+        443
+      ],
+      "needs_ip_fragments": true
+    },
+    {
+      "candidate_id": "Q2",
+      "args": [
+        "--payload=quic_initial",
+        "--lua-desync=fake:blob=fake_default_quic:repeats=1",
+        "--lua-desync=send:ipfrag:ipfrag_pos_udp=8",
+        "--lua-desync=drop"
+      ],
+      "recipe_sha256": "6d6b68fe6a190bfa64a2351c13e00071e9cd3112344ae717534c768818fed24a",
+      "passed_hosts": [
+        "cdn.discordapp.com",
+        "hetzner.com",
+        "media.discordapp.net",
+        "www.hetzner.com"
+      ],
+      "measured_destination_ports": [
+        443
+      ],
+      "needs_ip_fragments": true
+    },
+    {
+      "candidate_id": "Q3",
+      "args": [
+        "--payload=quic_initial",
+        "--lua-desync=fake:blob=fake_default_quic:repeats=20"
+      ],
+      "recipe_sha256": "e1a0fdf6a95e4c92c9f900239c8f2b367aa648d06c0194b5a501e4fcd7ae4f62",
+      "passed_hosts": [
+        "linkedin.com",
+        "www.threads.com"
+      ],
+      "measured_destination_ports": [
+        443
+      ],
+      "needs_ip_fragments": false
+    },
+    {
+      "candidate_id": "Q4",
+      "args": [
+        "--payload=quic_initial",
+        "--lua-desync=fake:blob=fake_default_quic:repeats=1"
+      ],
+      "recipe_sha256": "4da854afa6c300ec458e807f81c4900e19d78867943eab25f8e12ac3672f6e6d",
+      "passed_hosts": [
+        "cdn.discordapp.com",
+        "media.discordapp.net"
+      ],
+      "measured_destination_ports": [
+        443
+      ],
+      "needs_ip_fragments": false
+    },
+    {
+      "candidate_id": "Q5",
+      "args": [
+        "--payload=quic_initial",
+        "--lua-desync=fake:blob=fake_default_quic:repeats=5"
+      ],
+      "recipe_sha256": "0c7447696349e47fd4d2b635e66f271a3aa541c46af86869d225aff2a4f06b08",
+      "passed_hosts": [
+        "www.youtube.com"
+      ],
+      "measured_destination_ports": [
+        443
+      ],
+      "needs_ip_fragments": false
+    }
+  ],
+  "note": "HTTP/3 measurements from the Windows catalogue."
+}

@@ -1,0 +1,3 @@
+Pinned upstream c849886ebc6d48e7b46d967e78a6bb65c90c3b74 (3.1.1).
+Local changes: 6s TCP connect and 15s I/O limits; do not cache SSLContext across destroyed key objects; suppress peer-info logcat. The ADB Conscrypt provider is isolated to its own TLS context, without modifying global Java TLS providers.
+Pairing cleanup null-checks partially initialized resources, preserving the original setup error. The owning socket is retained and closed even if TLS setup fails. AdbConnection.isTlsConnection() exposes the negotiated transport so Igareck rejects plain ADB before opening any shell stream. Protocol/cryptography unchanged.

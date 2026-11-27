@@ -1,0 +1,1 @@
+package android.os; import java.util.concurrent.*; public class Handler {public static final ExecutorService MAIN=Executors.newSingleThreadExecutor(r->{Thread t=new Thread(r,"fake-android-main");t.setDaemon(true);return t;});public Handler(Looper l){} public boolean post(Runnable r){MAIN.execute(r);return true;}}

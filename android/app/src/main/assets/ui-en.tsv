@@ -1,0 +1,376 @@
+# Exact labels and fragments of existing runtime messages. Format: kind<TAB>Russian<TAB>English.
+exact	Вернуться в главное меню	Back to main screen
+exact	Откройте ссылку в браузере	Open the link in a browser.
+exact	Не удалось выполнить действие	The action could not be completed.
+exact	Закрыть	Close
+exact	Статус работы	Status
+exact	Проверка сайтов	Website checks
+exact	Инструкции	Instructions
+exact	Логи и лицензии	Logs and licenses
+exact	Остановить стратегии	Stop strategies
+exact	Локальный порт SOCKS5	Local SOCKS5 port
+exact	Порт	Port
+exact	TCP-стратегии по группам	TCP strategy groups
+exact	Избранные	Favorites
+exact	Все · 484	All · 484
+exact	Сетевой модуль	Network module
+exact	Поиск в группе по номеру или слову	Search this group by number or keyword
+exact	Список TCP-стратегий	TCP strategy list
+exact	Недоступна	Unavailable
+exact	Добавить или убрать из избранного	Add to or remove from favorites
+exact	UDP через SOCKS	UDP over SOCKS
+exact	Стратегия QUIC	QUIC strategy
+exact	Стратегия Discord/STUN	Discord/STUN strategy
+exact	Выберите TCP-стратегию	Select a TCP strategy.
+exact	Работает	Running
+exact	Запускается	Starting
+exact	Восстанавливается	Restoring
+exact	Ошибка	Error
+exact	Требуется активация сетевого модуля	Network module activation required
+exact	Остановлен	Stopped
+exact	Выбор изменён. Нажмите «Применить».	Selection changed. Tap Apply to use it.
+exact	Нет совпадений. Измените группу или поиск.	No matches. Change the group or your search.
+exact	Останавливается	Stopping
+exact	Открыта инструкция	Current guide
+exact	Цепочный конфиг	Chain proxy configuration
+exact	Локальный профиль SOCKS5	Local SOCKS5 profile
+exact	Готовый YAML для прямого доступа	YAML for direct access
+exact	Сохранить YAML для FlClash	Save YAML for FlClash
+exact	Не удалось открыть инструкцию.	Could not open the guide.
+exact	Документация Karing	Karing documentation
+exact	Документация Exclave	Exclave documentation
+exact	Справка и выпуски v2rayNG	v2rayNG help and releases
+exact	Документация Mihomo	Mihomo documentation
+exact	Копировать в буфер обмена	Copy to clipboard
+exact	Скопировано.	Copied.
+exact	Имя пользователя и пароль оставьте пустыми.	Leave the username and password blank.
+exact	Не удалось открыть выбор файла.	Could not open the file picker.
+exact	Файл недоступен	File unavailable
+exact	Профиль FlClash сохранён.	FlClash profile saved.
+exact	Не удалось сохранить профиль FlClash.	Could not save the FlClash profile.
+exact	Проверка TCP-стратегий	TCP strategy checks
+exact	Сбросить статистику	Reset results
+exact	Прямой доступ к сайтам без VPN. На время проверки отключите VPN-клиент.	These checks use direct access. Turn off your VPN client before testing.
+exact	Результаты выше относятся только к прямому доступу к сайту!	The results above apply only to direct access to each website!
+exact	Проверка доступа на сайт не гарантирует полную работоспособность всех его компонентов при загрузке напрямую.	Passing a website check does not guarantee that every part of the site will work when you access it directly.
+exact	Работоспособность отличается от оператора к оператору.	Results vary by internet provider.
+exact	Первоочередная цель Igareck AntiDPI - это восстановление работы конфигураций VPN и мостов Tor.	The main goal of Igareck AntiDPI is to restore connectivity for VPN configurations and Tor bridges.
+exact	Поэтому проверка сайтов никак не связана с успешностью подключения к конфигам!	Website checks cannot tell you whether a VPN configuration or a Tor bridge will connect!
+exact	Работа подписок VPN / мостов Tor и прямой доступ к сайтам - это 2 разные вещи!	VPN subscriptions and Tor bridges require different checks from direct website access!
+exact	VPN / Tor и рабочие стратегии для них проверяются отдельно.	Test VPN and Tor separately to find strategies that work for each one.
+exact	Начинайте со стратегий Golden, они в самом начале списка.	Start with the Golden strategies at the top of the list.
+exact	В VPN-клиенте сравните число доступных серверов, а в Tor проверьте подключение и скорость выбранного моста.	In your VPN client, compare the number of reachable servers. In Tor, check whether your chosen bridge connects and how fast it is.
+exact	Диапазон TCP-стратегий для 	TCP strategy range for 
+exact	Число параллельных проверок для 	Parallel checks for 
+exact	Проверить	Check
+exact	Проверить доступ к 	Check access to 
+exact	Стратегии	Strategies
+exact	Параллели	Parallel checks
+exact	Укажите число параллельных проверок от 1 до 5.	Enter a number of parallel checks from 1 to 5.
+exact	Прокси возобновит работу после проверки.	The proxy will resume after the check.
+exact	Остановить	Stop
+exact	Остановить проверку 	Stop checking 
+exact	Логи	Logs
+exact	Сохраните ZIP с журналами на устройстве для диагностики. В журнале могут быть адреса соединений.	Save a ZIP of the logs for troubleshooting. The logs may contain connection addresses.
+exact	Экспорт логов	Export logs
+exact	Подробный журнал	Verbose logging
+exact	Изменение подробности вступит в силу при следующем «Запустить / применить».	The logging change takes effect the next time you tap Start / Apply.
+exact	Проверить трафик	Test traffic
+exact	Лицензии	Licenses
+exact	Полные тексты лицензий	Full license texts
+exact	Не удалось открыть текст лицензии.	Could not open the license text.
+exact	Тексты лицензий не найдены.	No license texts found.
+exact	Не удалось открыть список лицензий.	Could not open the license list.
+exact	ZIP с журналами сохранён.	Log ZIP saved.
+exact	Не удалось сохранить ZIP.	Could not save the ZIP.
+exact	Проверка скачивает до 1 МиБ по HTTPS. Результат относится к TCP.	The check downloads up to 1 MiB over HTTPS and measures TCP traffic.
+exact	Напрямую	Direct
+exact	Через AntiDPI	Through AntiDPI
+exact	Через VPN-клиент	Through the VPN client
+exact	Через SOCKS5 клиента VPN/Tor	Through the VPN/Tor client's SOCKS5 proxy
+exact	Клиент VPN/Tor	VPN/Tor client
+exact	Другой клиент	Other client
+exact	Локальный порт SOCKS5 или Mixed в настройках клиента	Local SOCKS5 or mixed port from the client settings
+exact	В Exclave включите вход SOCKS5. Используйте его локальный порт, обычно 2080.	Enable the SOCKS5 inbound in Exclave. Use its local port, usually 2080.
+exact	Запустите Tor в выбранном клиенте и укажите порт его локального SOCKS5.	Start Tor in the selected client and enter its local SOCKS5 port.
+exact	Укажите фактический порт клиента. Для проверки достаточно локального входа на 127.0.0.1.	Use the client's configured port. A listener on 127.0.0.1 is sufficient for the test.
+exact	Сравнить три пути	Compare all three routes
+exact	Локальный SOCKS/Mixed-порт VPN-клиента	VPN client's local SOCKS/Mixed port
+exact	HTTPS-адрес файла	HTTPS file URL
+exact	Имя узла для замера (необязательно)	Server label for this check (optional)
+exact	При неудаче проверить второй HTTPS-адрес	Try a second HTTPS URL if the first fails
+exact	Проверка передачи данных	Traffic test
+exact	Отмена	Cancel
+exact	Начать	Start
+exact	Проверьте порт VPN-клиента.	Check the VPN client's port.
+exact	Сначала запустите AntiDPI.	Start AntiDPI first.
+exact	Укажите отдельный порт VPN-клиента.	Enter a separate port for the VPN client.
+exact	Укажите только короткое имя узла.	Enter a short server label.
+exact	Отменить проверку	Cancel test
+exact	Активация сетевого модуля	Activate the network module
+exact	Вернуться к проверкам	Back to website checks
+exact	Выполняйте по порядку	Follow these steps
+exact	1. Включите режим разработчика на Android 11 или новее. Для этого найдите «Номер сборки» в сведениях об устройстве и нажмите на него семь раз.	1. Enable Developer options on Android 11 or later. Find Build number in your device information and tap it seven times.
+exact	2. Включите Wi-Fi и подключитесь к точке доступа. В доверенной домашней сети отметьте «Всегда разрешать отладку в этой сети», когда Android покажет запрос.	2. Turn on Wi-Fi and join an access point. On a trusted home network, select Always allow on this network when Android asks.
+exact	Для сопряжения достаточно подключения к локальной Wi-Fi-сети.	A local Wi-Fi connection is sufficient for pairing.
+exact	3. Откройте параметры разработчика. Найдите «Беспроводная отладка» или «Отладка по Wi-Fi» и включите её.	3. Open Developer options and turn on Wireless debugging.
+exact	4. Вернитесь сюда и разрешите уведомления для ввода кода. Если уведомление не всплывает, включите всплывающий показ в настройках канала или откройте шторку.	4. Return here and allow pairing notifications. If the notification does not pop up, enable pop-ups in notification settings or open the notification shade.
+exact	Разрешить уведомления для ввода кода	Allow pairing notifications
+exact	Настройки всплывающего уведомления	Pop-up notification settings
+exact	5. Нажмите «Начать сопряжение». Затем откройте отладку по Wi-Fi и выберите «Сопряжение с помощью кода».	5. Tap Start pairing. Open Wireless debugging and select Pair device with pairing code.
+exact	Начать сопряжение	Start pairing
+exact	Оставьте системное окно с кодом открытым. В уведомлении Igareck введите шесть цифр и нажмите «Отправить». Вернитесь на этот экран и дождитесь статуса «Сетевой модуль активен».	Keep Android's code dialog open. Enter the six digits in the Igareck notification and tap Send. Return here and wait for Network module active.
+exact	Параметры разработчика → Отладка по Wi-Fi	Developer options → Wireless debugging
+exact	Ручной ввод	Manual entry
+exact	Если шаг 5 не сработал, откройте параметры разработчика вручную через «Настройки Android». Перейдите в раздел «Беспроводная отладка» («Отладка по Wi-Fi») и нажмите «Сопряжение с помощью кода». Введите шестизначный код и порт из этого окна в поля ниже. Оставьте окно Android открытым, например в режиме разделённого экрана.	If step 5 fails, open Developer options directly from Android Settings. Open Wireless debugging and tap Pair device with pairing code. Enter the six-digit code and port from that dialog below. Keep the Android dialog open, for example in split-screen mode.
+exact	Порт сопряжения · автоматически	Pairing port · automatic
+exact	Код сопряжения · 6 цифр	Pairing code · 6 digits
+exact	Сопрячь и активировать	Pair and activate
+exact	Порт подключения находится на основном экране «Отладка по Wi-Fi» в строке «IP-адрес и порт». В каждое поле порта введите только число после двоеточия.	Find the connection port on the main Wireless debugging screen under IP address & Port. In each port field, enter only the number after the colon.
+exact	Порт подключения · автоматически	Connection port · automatic
+exact	Активировать сетевой модуль	Activate network module
+exact	Очистить ручные порты и повторить	Clear manual ports and retry
+exact	Автоматически восстанавливать активацию сетевого модуля	Automatically restore the network module
+exact	После первой настройки сетевой модуль восстанавливается при открытии приложения, после перезагрузки и при появлении Wi-Fi. Стратегии запускаются кнопкой «Запустить / применить». После перезагрузки сначала разблокируйте устройство.	After setup, the app attempts to restore the module on app launch, after a reboot and when Wi-Fi returns. To run a strategy, tap Start / Apply. Unlock the device after a reboot.
+exact	Автоматически включать отладку для активации сетевого модуля	Automatically enable debugging to activate the module
+exact	Для запуска остановленного сетевого модуля требуется подключение к Wi-Fi или USB-отладка через компьютер. Если модуль уже активен, интернет может работать через мобильную сеть.	Starting a stopped module requires a Wi-Fi connection or USB debugging from a computer. After activation, you can use mobile data.
+exact	Запуск через USB	Start over USB
+exact	Активация через USB (если нет Wi-Fi, при наличии ПК)	Activate via USB (with a computer when Wi-Fi is unavailable)
+exact	Активация сетевого модуля через USB	Activate the network module via USB
+exact	Включите «Отладка по USB» в параметрах разработчика Android. Подключите устройство к компьютеру кабелем передачи данных, разблокируйте экран и подтвердите запрос «Разрешить отладку по USB?», когда он появится.	Enable USB debugging in Android's Developer options. Connect the device to your computer with a data cable, unlock the screen and confirm Allow USB debugging when prompted.
+exact	Скачайте Android SDK Platform-Tools для своей ОС и распакуйте архив целиком.	Download Android SDK Platform-Tools for your operating system and extract the entire archive.
+exact	Скачать Android SDK Platform-Tools	Download Android SDK Platform-Tools
+exact	Нажмите на кнопку «Запуск через USB», чтобы запустить процесс активации:	Tap Start over USB to begin activation.
+exact	После статуса «Ожидается USB-команда» у вас есть три минуты, чтобы выполнить команду запуска на компьютере.	When Waiting for the USB command appears, you have three minutes to run the start command on your computer.
+exact	Пошаговые инструкции.	Step-by-step instructions.
+exact	Распакуйте ZIP-архив. Откройте обычный PowerShell в папке platform-tools с adb.exe. Для выполнения команд ADB права администратора не нужны.	Extract the ZIP archive. Open PowerShell in the platform-tools folder containing adb.exe. You can run the ADB commands as a standard user.
+exact	Распакуйте архив, откройте терминал и перейдите в папку platform-tools.	Extract the archive, open a terminal and change to the platform-tools folder.
+exact	Копировать команду запуска	Copy start command
+exact	Команда запуска скопирована	Start command copied
+exact	1. Выполните первую команду в первой строке.	1. Run the command on the first line.
+exact	Если видите статус «unauthorized», то подтвердите USB-отладку на Android и проверьте снова.	If you see unauthorized, confirm USB debugging on Android and check again.
+exact	2. Когда появится «device», нажмите кнопку выше «Запуск через USB» на Android.	2. When you see device, tap Start over USB above on Android.
+exact	3. Дождитесь статуса ожидания «Ожидается USB-команда» и	3. Wait until Waiting for the USB command appears, then
+exact	выполните вторую команду во второй строке.	run the command on the second line.
+exact	Дождитесь в Igareck AntiDPI статуса «Сетевой модуль активен».	Wait until Igareck AntiDPI shows Network module active.
+exact	Затем выберите и запустите стратегию.	Then choose a strategy and start it.
+exact	Вернуться назад	Back
+exact	Остановить сетевой модуль	Stop network module
+exact	Отладка по Wi-Fi Android включена.	Android wireless debugging is on.
+exact	Отладка по Wi-Fi Android выключена.	Android wireless debugging is off.
+exact	Состояние отладки по Wi-Fi Android недоступно.	Android wireless debugging status is unavailable.
+exact	Связь с сетевым модулем потеряна. Подключитесь к Wi-Fi или используйте «Запуск через USB».	The network module disconnected. Connect to Wi-Fi or use Start via USB.
+exact	Автовосстановление включено · сетевой модуль недоступен.	Automatic restoration is on · network module unavailable.
+phrase	Сетевой модуль недоступен. Подключитесь к Wi-Fi или запустите модуль через USB.	The network module is unavailable. Connect to Wi-Fi or start it via USB.
+exact	Кнопка «Стоп» на главном экране останавливает стратегии, сохраняя готовый сетевой модуль. «Остановить сетевой модуль» также приостанавливает автовосстановление до следующего ручного запуска модуля или стратегии.	Stop on the main screen stops the strategies and leaves the module ready. Stop network module also pauses automatic restoration until you manually start the module or a strategy.
+exact	Отменить поиск / активацию	Cancel discovery / activation
+exact	Разрешение на уведомления уже доступно.	Notifications are already allowed.
+exact	Откройте настройки уведомлений Igareck в Android.	Open Igareck's notification settings in Android.
+exact	Откройте параметры разработчика в настройках Android.	Open Developer options in Android Settings.
+exact	Отладка по Wi-Fi Android · 	Android Wireless debugging · 
+exact	Автовключение отладки доступно. Разрешение сохраняется после перезагрузки.	Automatic debugging is available. Its permission persists after reboot.
+exact	Разрешение автовключения будет подготовлено сетевым модулем после первого успешного запуска.	The module will set up permission for automatic debugging after its first successful start.
+exact	Отмена прервёт выполняющийся поиск или запуск.	Cancel stops the current discovery or activation.
+exact	Для остановки стратегий используйте «Стоп» на главном экране.	To stop strategies, tap Stop on the main screen.
+exact	Повторить сопряжение (если Android его удалил)	Pair again (if Android removed the pairing)
+exact	Модуль не активирован	Network module inactive
+exact	Сетевой модуль активен	Network module active
+exact	Сопряжение сохранено	Pairing saved
+exact	Требуется повторная активация	Reactivation required
+exact	Сетевой модуль доступен через собственный канал. Wi-Fi-отладка для управления и повторного запуска стратегий не требуется.	The network module is available over its own channel. You can manage and restart strategies with Wireless debugging off.
+exact	Включи беспроводную отладку и нажми «Активировать сетевой модуль». Повторный код не нужен.	Turn on Wireless debugging and tap Activate network module. You can use your saved pairing.
+exact	Сетевой модуль недоступен. Включи беспроводную отладку и повтори активацию.	The network module is unavailable. Turn on Wireless debugging and try activating again.
+exact	Управляйте стратегиями с главного экрана.	Manage strategies from the main screen.
+exact	Ожидается код сопряжения	Waiting for pairing code
+exact	Открой беспроводную отладку и выбери сопряжение по коду. Код можно ввести в уведомлении Igareck.	Open Wireless debugging and select Pair device with pairing code. Enter the code in the Igareck notification.
+exact	Активация отменена.	Activation canceled.
+exact	Активация не завершена	Activation incomplete
+exact	Сопряжение сохранено. Проверь беспроводную отладку и порт подключения, затем повтори активацию.	Pairing saved. Check Wireless debugging and the connection port, then try activating again.
+exact	Проверь свежий код и порт сопряжения. Окно Android с кодом должно оставаться открытым.	Check the current pairing code and port. Keep Android's pairing dialog open.
+exact	Подключение к ADB	Connecting to ADB
+exact	Восстановление отладки	Restoring Wireless debugging
+exact	Доступный порт ADB ещё не найден. Выполняется один повторный запуск беспроводной отладки.	The ADB port is unavailable. Wireless debugging will be restarted once.
+exact	Порт сопряжения ещё не найден. Открой окно «Сопряжение с помощью кода» или введи его порт вручную.	The pairing port has not been found. Open Pair device with pairing code or enter its port manually.
+exact	Выполняется сопряжение	Pairing
+exact	Не закрывай окно Android с кодом сопряжения.	Keep Android's pairing dialog open.
+exact	Можно активировать сетевой модуль. Код повторно вводить не требуется.	You can activate the network module using the saved pairing.
+exact	Открой «Активация сетевого модуля» и выполни сопряжение ADB.	Open Activate the network module and pair with ADB.
+exact	Сопряжение сохранено. Для запуска подключись к Wi-Fi или используй «Запуск через USB» с компьютера.	Pairing saved. Connect to Wi-Fi or use Start over USB from a computer.
+exact	Определяется порт подключения этого устройства.	Looking for this device's ADB connection port.
+exact	Включается отладка	Enabling debugging
+exact	Android может запросить разрешение для текущей Wi-Fi-сети.	Android may ask you to trust the current Wi-Fi network.
+exact	Подключение к Wi-Fi потеряно. Сопряжение сохранено.	Wi-Fi connection lost. Pairing is saved.
+exact	Доступный TLS-порт ADB не обнаружен. Сопряжение сохранено. Если на главном экране «Отладка по Wi-Fi» видна строка «IP-адрес и порт», введи этот порт вручную. Иначе проверь разрешение для сети, перезапусти отладку или используй USB.	No reachable ADB TLS port found. Pairing is saved. If Wireless debugging shows IP address & Port, enter that port manually. Otherwise check the network authorization, restart debugging or use USB.
+exact	Запускается сетевой модуль	Starting the network module
+exact	ADB подключён. Запускается сетевой модуль Igareck AntiDPI.	ADB connected. Starting the Igareck AntiDPI network module.
+exact	Сетевой модуль не подтвердил запуск. Проверь беспроводную отладку и экспортируй журнал для диагностики.	The network module did not confirm startup. Check Wireless debugging and export logs for troubleshooting.
+exact	Подтверждение сетевого модуля	Verifying the network module
+exact	Проверяется защищённый канал управления.	Checking the secure control channel.
+exact	Ожидается USB-команда	Waiting for the USB command
+exact	Подключи устройство к компьютеру, разреши USB-отладку и выполни скопированную команду ADB. Ожидание до трёх минут.	Connect the device to a computer, allow USB debugging and run the copied ADB command. The app waits for up to three minutes.
+exact	Время USB-запуска истекло. Нажми «Запуск через USB» и повтори команду.	USB activation timed out. Tap Start over USB and run the command again.
+exact	Сетевой модуль остановлен пользователем. Для нового запуска нажми «Активировать сетевой модуль».	You stopped the network module. To start it again, tap Activate network module.
+exact	Отменены только поиск и активация. Активный сетевой модуль сохранён; для остановки движка нажми Стоп.	Discovery and activation were canceled. The network module remains active. Tap Stop to stop the engine.
+exact	включена	on
+exact	выключена	off
+exact	состояние недоступно	status unavailable
+exact	Включите «Отладка по Wi-Fi» и повторите активацию. Если сопряжение сохранено, используйте его.	Turn on Wireless debugging and retry activation. Use your saved pairing if available.
+exact	Повторите автопоиск или введите текущий порт из основной строки «IP-адрес и порт».	Run discovery again or enter the current port from IP address & Port.
+exact	Проверьте переключатель отладки Android и текущий порт подключения. Вводите новый код, если Android удалил сопряжение.	Check Wireless debugging and the current connection port. Enter a new code if Android removed the pairing.
+exact	Движок и «Стоп» работают через локальный канал. Отладка потребуется для нового запуска модуля.	The engine and Stop use the local control channel. Debugging is required to start a stopped module.
+exact	Движок и «Стоп» работают через локальный канал.	The engine and Stop use the local control channel.
+exact	Для запуска нажмите «Активировать сетевой модуль». После перезапуска отладки порт может измениться.	Tap Activate network module to start. The port can change after debugging restarts.
+exact	Автовосстановление выключено.	Automatic restore is off.
+exact	Автовосстановление приостановлено кнопкой «Остановить сетевой модуль». Ручной запуск возобновит его.	Automatic restore is paused. Start the module manually to resume it.
+exact	Автовосстановление будет доступно после первой успешной активации.	Automatic restore becomes available after the first successful activation.
+exact	Автовосстановление включено · сетевой модуль активен.	Automatic restore enabled · network module active.
+exact	Сопряжение и активация ADB	ADB pairing and activation
+exact	Всплывающий ввод кода сопряжения при открытом окне Android	Enter the pairing code while Android's pairing dialog is open.
+exact	Сервис сопряжения найден. Введи код из открытого окна Android.	Pairing service found. Enter the code from the open Android dialog.
+exact	Ввести код	Enter code
+exact	6 цифр из окна сопряжения Android	6 digits from Android's pairing dialog
+exact	Активировать	Activate
+exact	Восстановление сетевого модуля	Network module restoration
+exact	Igareck · восстановление сетевого модуля	Igareck · Restoring the network module
+exact	Используется сохранённая авторизация. Стратегии автоматически не запускаются.	Using the saved authorization. Start strategies from the main screen.
+exact	Параллельность: 1–5	Parallel checks: 1–5
+exact	Остановка собственного движка…	Stopping the packet engine…
+exact	Запуск локального прокси…	Starting the local proxy…
+exact	Проверка отменена	Check canceled
+exact	Для nfqws2/TAP нужен Android 11 или новее.	nfqws2/TAP requires Android 11 or later.
+exact	Для nfqws2/TAP нужен Android 11 или новее	nfqws2/TAP requires Android 11 or later
+exact	Для смены стратегии активируй сетевой модуль. Текущий движок можно остановить.	Activate the module to change the strategy. You can stop the running engine.
+exact	Открой «Активация сетевого модуля» и активируй сетевой модуль.	Open Activate the network module and activate it.
+exact	В APK нет nfqws2 для текущего ABI.	This APK lacks nfqws2 for the device's ABI.
+exact	Восстановление ожидает активации	Restore waiting for activation
+exact	Связь снова потеряна. Запрос работы сохранён; Стоп отменит его.	Connection lost again. The run request is saved. Tap Stop to cancel it.
+exact	Пакетный движок завершился	The packet engine exited
+exact	Нет связи с движком	Packet engine connection lost
+exact	Проверяется связь. После возвращения сетевого модуля статус обновится автоматически.	Checking the connection. The status will update when the network module returns.
+exact	Ожидается связь с собственным движком	Waiting for the packet engine
+exact	Проверяется очистка ресурсов прежнего запуска.	Checking cleanup from the previous run.
+exact	Запрос работы сохранён. Стоп отменит восстановление.	The run request is saved. Tap Stop to cancel restoration.
+exact	Восстановление ожидает очистки	Restore waiting for cleanup
+exact	Прежние ресурсы ещё не освобождены. Повторная проверка выполняется автоматически.	Resources from the previous run are still held. The app will check again automatically.
+exact	Очистка подтверждена. Ожидается активация для нового запуска; Стоп отменит его.	Cleanup confirmed. The next start is waiting for activation. Tap Stop to cancel it.
+exact	Остановка ожидает очистки	Stop waiting for cleanup
+exact	Остановка ожидает связи	Stop waiting for connection
+exact	Стоп принят, автоматический запуск отменён. Очистка пакетных ресурсов будет проверена повторно.	Stop accepted. Automatic restart canceled. Resource cleanup will be checked again.
+exact	Остановка запрошена; ожидается подтверждение очистки	Stop requested. Waiting for cleanup confirmation.
+exact	Остановка ещё не подтверждена; нажми Стоп	Stop is still unconfirmed. Tap Stop.
+exact	Локальный AntiDPI-прокси	Local AntiDPI proxy
+exact	Очистка собственных ресурсов ещё не подтверждена.	Resource cleanup is still unconfirmed.
+exact	Предыдущая проверка была прервана	The previous check was interrupted
+exact	Ошибки DNS помешали оценить часть стратегий. Повтори проверку.	DNS errors kept some strategies from being evaluated. Try again.
+exact	Порт должен быть числом 1024–65535	Enter a port number from 1024 to 65535
+exact	Введи шестизначный код сопряжения	Enter the six-digit pairing code
+exact	Нарушен состав 484 публичных стратегий	The catalogue of 484 public strategies is incomplete
+exact	Порт должен быть от 1024 до 65535	The port must be between 1024 and 65535
+exact	Предыдущий замер — после него настройки применены заново.	Previous measurement · settings were reapplied afterward.
+phrase	Проверка не нашла стратегий, значит попробуйте вручную включать стратегии по одной и проверять работу 	No strategies passed. Try strategies one at a time and test access to 
+phrase	Сетевой модуль сейчас недоступен. Открой «Активация сетевого модуля»; запрос очистки сохранён.	The network module is unavailable. Open Activate the network module. The cleanup request is saved.
+phrase	Для автоматического запуска после перезагрузки нужно однократно выполнить Wi-Fi-сопряжение.	Pair over Wi-Fi once to restore automatically after a reboot.
+phrase	Очистка прежнего запуска ещё не подтверждена; повтори Стоп после активации сетевого модуля.	Cleanup from the previous run is still unconfirmed. Tap Stop after activating the network module.
+phrase	Нет связи с сетевым модулем. Запрос Стоп сохранён до подтверждения очистки.	The module connection is unavailable. The Stop request is saved until cleanup is confirmed.
+phrase	Ожидается подключение к Wi-Fi. Для запуска без Wi-Fi доступен USB.	Waiting for Wi-Fi. USB is available as an alternative.
+phrase	Проверь разрешение беспроводной отладки для текущей Wi-Fi-сети.	Check the Wireless debugging authorization for the current network.
+phrase	Не удалось сохранить состояние собственных пакетных ресурсов.	Could not save the packet resource state.
+phrase	не удалось подключиться к адресу теста или локальному прокси	could not connect to the test endpoint or local proxy
+phrase	Повреждена запись владения ресурсами; экспортируй журнал.	The resource ownership record is damaged. Export the logs.
+phrase	Сначала подтверди остановку предыдущего пакетного запуска	Confirm that the previous packet engine has stopped first
+phrase	Не удалось удалить запись остановленного сетевого модуля.	Could not remove the stopped module's record.
+phrase	Возобновится после ручного запуска модуля или стратегии.	Resumes when you manually start the module or a strategy.
+phrase	Не все операции очистки TAP подтверждены; смотри экспорт	TAP cleanup is incomplete. See the exported logs.
+phrase	Не подтверждено удаление собственной рабочей папки Lua	Lua working directory cleanup is unconfirmed
+phrase	Не удалось сохранить канал управления сетевым модулем	Could not save the module's control channel
+phrase	Discord/STUN требует включённого UDP/QUIC через SOCKS	Discord/STUN requires UDP/QUIC over SOCKS
+phrase	TLS: соединение закрыто или рукопожатие не завершено	TLS: the connection closed or the handshake did not finish
+phrase	Укажи стратегию или диапазон, например 1-45 или T40	Enter a strategy or range, for example 1-45 or T40
+phrase	Сначала нажми Стоп и дождись подтверждения очистки.	Tap Stop and wait for cleanup to finish first.
+phrase	Android отложил запуск; можно открыть приложение.	Android deferred the start. You can open the app.
+phrase	Не подтверждён применённый Discord/STUN-профиль	Could not confirm the applied Discord/STUN profile
+phrase	тестовый сервер вернул неподходящий HTTP-ответ	the test server returned an unexpected HTTP response
+phrase	Не подтверждён сетевой модуль USB ADB UID 2000	The USB ADB network module did not confirm UID 2000
+phrase	Не подтверждены применённые UDP/QUIC-настройки	Could not confirm the applied UDP/QUIC settings
+phrase	TLS: сертификат не соответствует адресу теста	TLS: the certificate does not match the test host
+phrase	Начало диапазона должно быть не больше конца	The range start must be no greater than the end
+phrase	Сохранённый канал относится к другому модулю	The saved channel belongs to a different module
+phrase	Нужны стратегии 1–484 и параллельность 1–5	Enter strategies 1–484 and 1–5 parallel checks
+phrase	TLS: сертификат сервера не прошёл проверку	TLS: server certificate verification failed
+phrase	Не подтверждён сетевой модуль ADB UID 2000	The ADB network module did not confirm UID 2000
+phrase	Не подтверждена остановка пакетного движка	Packet engine stop is unconfirmed
+phrase	Найдено 10 стратегий — проверка завершена	Found 10 strategies · check complete
+phrase	Не подтверждены независимые входы YouTube	Could not confirm the separate test ports
+phrase	не удалось получить тело тестового файла	could not download the test file body
+phrase	Сначала останови стратегии кнопкой Стоп.	Tap Stop to stop the strategies first.
+phrase	Активируй сетевой модуль для проверки 	Activate the network module to check 
+phrase	Пример диапазона: 1-45, 60, T100-T120	Example range: 1-45, 60, T100-T120
+phrase	Сохранённый сетевой модуль недоступен	The saved network module is unavailable
+phrase	Журнал сетевого модуля недоступен: 	Network module log unavailable: 
+phrase	Ожидается подтверждение остановки: 	Waiting for stop confirmation: 
+phrase	Неизвестная публичная стратегия: 	Unknown public strategy: 
+phrase	DoH не вернул пригодный IPv4 для 	DoH did not return a usable IPv4 address for 
+phrase	Не подтверждён сетевой модуль ADB	The ADB network module was not confirmed
+phrase	Сначала активируй сетевой модуль.	Activate the network module first.
+phrase	Восстанавливается сетевой модуль	Restoring the network module
+phrase	Проверка прервана из-за ошибки: 	Check interrupted by an error: 
+phrase	Остановка ещё не подтверждена: 	Stop awaiting confirmation: 
+phrase	Собственный nfqws2 ещё работает	The local nfqws2 engine is still running
+phrase	Автовосстановление включено · 	Automatic restore enabled · 
+phrase	. Эти ответы не засчитываются.	. These responses do not count as passes.
+phrase	TLS: сервер не ответил вовремя	TLS: the server timed out
+phrase	Приостановлено пользователем	Paused by user
+phrase	Автовосстановление выключено	Automatic restore off
+phrase	Порог сохранённой проверки: 	Saved check threshold: 
+phrase	Проверка TCP-стратегий для 	Checking TCP strategies for 
+phrase	. Стратегии не оценивались.	. No strategies were evaluated.
+phrase	Номера TCP-стратегий: 1–484	TCP strategy numbers: 1–484
+phrase	Не совпал публичный рецепт 	Public strategy mismatch for 
+phrase	Проверяется сетевой модуль	Checking the network module
+phrase	Повторная попытка отложена	Retry deferred
+phrase	Не запущен пакетный движок	The packet engine is not running
+phrase	Ожидается фоновая попытка	Waiting for a background attempt
+phrase	проверка адреса не прошла	the endpoint check failed
+phrase	Ожидание условий запуска	Waiting for startup conditions
+phrase	Восстановление отменено	Restoration canceled
+phrase	 · вызовы Discord/STUN 	 · Discord/STUN calls 
+phrase	Получены HTTP-отказы: 	Unsuccessful HTTP responses: 
+phrase	Facebook отвечает по HTTPS. Загрузка HTML не подтверждена. Стратегии с доступом к серверу: 	Facebook responds over HTTPS. Page load unconfirmed. Strategies that reached the server: 
+exact	Проверка не подтвердила HTTPS-доступ к серверу Facebook.	The check could not confirm HTTPS access to the Facebook server.
+phrase	Предыдущий результат относится к проверке HTML.	The previous result came from the HTML check.
+phrase	Ожидается завершение настройки USB	Waiting for the USB configuration to settle
+phrase	локальный порт недоступен. Запустите клиент, включите его вход SOCKS5 и проверьте порт	local port unavailable. Start the client, enable its SOCKS5 inbound, and check the port
+phrase	на этом порту нет ответа SOCKS5. Проверьте настройки клиента	no SOCKS5 response on this port. Check the client settings
+phrase	локальный SOCKS5 отклонил подключение без авторизации	the local SOCKS5 proxy rejected an unauthenticated connection
+phrase	SOCKS5-клиент не открыл соединение с адресом теста	the SOCKS5 client could not connect to the test endpoint
+phrase	Подготовка проверки 	Preparing to check 
+phrase	Проверка остановлена	Check stopped
+phrase	Проверка прервана: 	Check interrupted: 
+phrase	pass один раз, DNS	one pass, DNS error
+phrase	Проверка завершена	Check complete
+phrase	 · текущий порог: 	 · current threshold: 
+phrase	Проверка DoH для 	Checking DoH for 
+phrase	Ошибка проверки: 	Check error: 
+phrase	получено частично	partial download
+phrase	 · ошибок DNS: 	 · DNS errors: 
+phrase	 · без оценки: 	 · inconclusive: 
+phrase	маленький ответ	short response
+phrase	UDP · принято 	UDP · received 
+phrase	 · отправлено 	 · sent 
+phrase	Запуск отменён	Start canceled
+phrase	/10 · запуск 	/10 · starting 
+phrase	 · проверено 	 · checked 
+phrase	 · Напрямую: 	 · Direct: 
+phrase	Проверяется 	Checking 
+phrase	: проверено 	: checked 
+phrase	 · UDP выкл.	 · UDP off
+phrase	файл получен	file received
+phrase	 · найдено 	 · found 
+phrase	 · UDP вкл.	 · UDP on
+phrase	 · адрес · 	 · endpoint · 
+phrase	 · отменено	 · canceled
+phrase	 · ответы 	 · replies 
+phrase	Ожидание	Waiting
+phrase	 КиБ/с	 KiB/s
+phrase	 с · 	 s · 
+phrase	 КиБ	 KiB

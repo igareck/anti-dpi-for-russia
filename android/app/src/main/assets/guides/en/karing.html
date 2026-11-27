@@ -1,0 +1,50 @@
+<h3>Exclude Igareck AntiDPI from Karing</h3>
+<p>1. Open “Settings” → “TUN” → “Proxied apps”.</p>
+<p>2. Turn off “Whitelist mode”, find <b>Igareck AntiDPI</b> and select it.</p>
+<p>Karing now excludes Igareck AntiDPI.</p>
+
+<p><br><b><u>Choose either of the two options below.</u></b></p>
+
+<section>
+<h4>Option 1</h4>
+<h3>Add the local SOCKS5 chain profile</h3>
+<p>1. Copy the configuration above and open Karing.</p>
+<p>2. On the main screen, tap “+ Add profile” → “Import from clipboard”.<br>
+Name the subscription <b>Igareck_AntiDPI</b> and disable scheduled updates.</p>
+<p>3. Open “Settings” → “Routing” → “Chain proxy”. Enable “Front / chain proxy”, open “Server”, tap “+” and select <b>Igareck_AntiDPI_Local</b>.</p>
+
+<h3>Access websites through a VPN</h3>
+<p>1. Choose your VPN subscription.<br>
+2. Measure the latency of the configurations and connect to a working VPN node.<br>
+Karing will connect through the local Igareck SOCKS5 proxy.</p>
+
+<h3>Access websites directly</h3>
+<p>1. Instead of a VPN configuration, select the configuration named <b>Igareck_AntiDPI_Local</b> (the configuration above) and start it.</p>
+<p>2. Open the website you need (Youtube/Discord/Linkedin and others) directly or use an app such as Discord App.</p>
+<p class="note">For Discord voice, enable UDP over SOCKS and Discord/STUN in AntiDPI.</p>
+</section>
+
+<section>
+<h4>Option 2</h4>
+<h3>Add the local SOCKS5 profile</h3>
+<p>1. Copy the configuration above and open Karing.</p>
+<p>2. On the main screen, tap “+ Add profile” → “Import from clipboard”.<br>
+Name the profile and disable scheduled updates.</p>
+
+<h3>Access websites through a VPN</h3>
+<p>If you are switching from option 1, turn off “Chain proxy” under “Routing”</p>
+<p>1. In “Routing” → “Custom Auto Select”, create a group named “AntiDPI — entry”.<br>
+Then tap the arrow on the right and, from the subscriptions, add only the local SOCKS5 configuration <b>Igareck_AntiDPI_Local</b> to the group.</p>
+<p>2. Create a second group named “VPN through AntiDPI”.<br>
+Then tap the arrow on the right and add the VPN subscriptions you need to the group.<br>
+For the “VPN through AntiDPI” group, open the “Front/chain proxy” icon (the icon with a circle) and assign the “AntiDPI — entry” group.</p>
+<p>3. Return to the main screen. To the right of the power button (the shield icon), tap the right arrow to open the configuration selection menu.</p>
+<p>4. Find and expand “Custom Auto Select” and select the “VPN through AntiDPI” group.</p>
+<p>The “VPN through AntiDPI” group (containing the subscriptions previously selected for it) will work like a balancer using the LeastPing strategy, without the option to switch individual configurations manually. The “VPN through AntiDPI” group will connect to the selected VPN node through the local Igareck SOCKS5 proxy.</p>
+
+<h3>Access websites directly</h3>
+<p>1. Instead of the “VPN through AntiDPI” group, select either the “AntiDPI - entry” group<br>
+or the configuration named <b>Igareck_AntiDPI_Local</b> (the configuration above) and start it.</p>
+<p>2. Open the website you need (Youtube/Discord/Linkedin and others) directly or use an app such as Discord App.</p>
+<p class="note">For Discord voice, enable UDP over SOCKS and Discord/STUN in AntiDPI.</p>
+</section>

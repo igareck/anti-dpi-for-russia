@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.igareck.antidpi" android:versionCode="49" android:versionName="1.0">
+    <uses-sdk android:minSdkVersion="30" android:targetSdkVersion="35" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <application android:name="com.igareck.antidpi.App" android:label="Igareck AntiDPI" android:icon="@drawable/launch_art" android:theme="@style/AppTheme" android:allowBackup="false" android:extractNativeLibs="true" android:supportsRtl="true" android:usesCleartextTraffic="false">
+        <receiver android:name="com.igareck.antidpi.RestorationReceiver" android:exported="false">
+            <intent-filter><action android:name="android.intent.action.BOOT_COMPLETED" /><action android:name="android.intent.action.MY_PACKAGE_REPLACED" /></intent-filter>
+        </receiver>
+        <service android:name="com.igareck.antidpi.RestorationJobService" android:exported="true" android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service android:name="com.igareck.antidpi.RestorationService" android:exported="false" android:foregroundServiceType="specialUse">
+            <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE" android:value="Bounded on-device recovery of the previously authorized AntiDPI helper after boot or app opening. Does not start packet strategies." />
+        </service>
+        <activity android:name="com.igareck.antidpi.ActivationActivity" android:exported="false" />
+        <activity android:name="com.igareck.antidpi.UsbActivationActivity" android:exported="false" />
+        <activity android:name="com.igareck.antidpi.WebsiteActivity" android:exported="false" />
+        <activity android:name="com.igareck.antidpi.InstructionsActivity" android:exported="false" />
+        <activity android:name="com.igareck.antidpi.LogsActivity" android:exported="false" />
+        <provider android:name="com.igareck.antidpi.UsbActivationProvider" android:authorities="com.igareck.antidpi.usb" android:exported="true" android:readPermission="android.permission.DUMP" android:grantUriPermissions="false" />
+        <receiver android:name="com.igareck.antidpi.WorkerBootstrapReceiver" android:exported="true" android:permission="android.permission.DUMP" />
+        <service android:name="com.igareck.antidpi.AdbActivationService" android:exported="false" android:foregroundServiceType="specialUse">
+            <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE" android:value="User-started local wireless ADB pairing and activation of the on-device AntiDPI service." />
+        </service>
+        <activity android:name="com.igareck.antidpi.MainActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <service android:name="com.igareck.antidpi.ProxyService" android:exported="false" android:foregroundServiceType="specialUse" android:stopWithTask="false">
+            <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE" android:value="User-started on-device SOCKS5 anti-DPI proxy for an external VPN client; ongoing local network connections." />
+        </service>
+    </application>
+</manifest>

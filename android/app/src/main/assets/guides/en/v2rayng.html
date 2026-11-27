@@ -1,0 +1,27 @@
+<h3>Exclude Igareck AntiDPI from v2rayNG</h3>
+<p>1. Open the side menu ☰ → “Per-app proxy”.</p>
+<p>2. Enable “Per-app proxy” and “Bypass”, find Igareck AntiDPI and select it.<br>
+The switches may be called “Enable per-app proxy” and “Bypass mode”, depending on the version.</p>
+<p>Igareck AntiDPI is now excluded from the v2rayNG VPN tunnel.</p>
+
+<h3>Add the local SOCKS5 profile</h3>
+<p>1. Open the side menu ☰ → “Groups” → “+”.<br>
+Create a “Local profiles” group and leave its URL blank.</p>
+<p>2. On the main screen, select the “Local profiles” tab and tap “+” → “Add SOCKS”.<br>
+Enter <b>Igareck_AntiDPI_Local</b> as the name, <b>127.0.0.1</b> as the address and <b>@PORT@</b> as the port.<br>
+Leave the username and password blank and save the profile.</p>
+
+<h3>Access websites through a VPN</h3>
+<p>1. Open the side menu ☰ → “Groups”.</p>
+<p>On the “Groups” screen, tap the pencil <img src="pencil" alt=""> beside your VPN subscription.<br>
+In “Front proxy”, select <b>Igareck_AntiDPI_Local</b> or enter its exact name.<br>
+Leave “Landing proxy” blank. Save the settings.</p>
+<p>2. Return to the subscription tab.<br>
+In the ⋮ menu, choose “Test real delay”, select a working VPN profile and connect.<br>
+v2rayNG connects to it through the local Igareck SOCKS5 proxy.</p>
+
+<h3>Access websites directly</h3>
+<p>1. Disconnect your current profile. On the “Local profiles” tab, select <b>Igareck_AntiDPI_Local</b> and tap the connect button. To route app traffic, open “Settings” → “Mode settings” → “Mode” → “VPN”.</p>
+<p>2. Open the website you want (YouTube, Discord, LinkedIn or others), or use an app such as Discord.<br>
+v2rayNG sends its traffic through the local Igareck SOCKS5 proxy for a direct connection to the website.</p>
+<p class="note">For Discord voice, enable UDP over SOCKS and Discord/STUN in AntiDPI.</p>

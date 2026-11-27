@@ -1,0 +1,1 @@
+package android.net;public class ConnectivityManager {public boolean wifi;public Network[] getAllNetworks(){return new Network[]{new Network(1)};}public NetworkCapabilities getNetworkCapabilities(Network n){return new NetworkCapabilities(wifi?1:0);}}

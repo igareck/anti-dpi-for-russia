@@ -1,0 +1,1 @@
+package android.content.pm;public class PackageManager {public static final int PERMISSION_GRANTED=0;public ApplicationInfo getApplicationInfo(String p,int flags){ApplicationInfo a=new ApplicationInfo();a.uid=10374;a.sourceDir="/data/app/igareck/base.apk";a.nativeLibraryDir="/data/app/igareck/lib/arm64";return a;}}

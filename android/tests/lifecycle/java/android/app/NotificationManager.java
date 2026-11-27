@@ -1,0 +1,1 @@
+package android.app;public class NotificationManager {public static final int IMPORTANCE_LOW=2;public void createNotificationChannel(NotificationChannel c){}public android.service.notification.StatusBarNotification[] getActiveNotifications(){return new android.service.notification.StatusBarNotification[0];}public void notify(int n,Notification a){}}

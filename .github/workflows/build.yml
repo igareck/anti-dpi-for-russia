@@ -1,5 +1,5 @@
 name: Build release files
-run-name: Build Igareck AntiDPI CLI (${{ inputs.platform }})
+run-name: Build Igareck AntiDPI (${{ inputs.platform }})
 
 on:
   workflow_dispatch:
@@ -12,6 +12,7 @@ on:
         options:
           - linux
           - windows
+          - android
           - all
       linux_version:
         description: 'Linux version (must match linux/data/release.json)'
@@ -120,6 +121,49 @@ jobs:
           path: |
             dist/Igareck_AntiDPI_CLI_v${{ inputs.linux_version }}_Linux_x64.tar.gz
             dist/SHA256SUMS_Linux_v${{ inputs.linux_version }}.txt
+          if-no-files-found: error
+          retention-days: 14
+          compression-level: 0
+
+  android:
+    name: Android 11+ universal APK
+    if: inputs.platform == 'android' || inputs.platform == 'all'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      ANDROID_PLATFORM_API: '35'
+      ANDROID_BUILD_TOOLS_VERSION: '35.0.0'
+      ANDROID_NDK_VERSION: '28.2.13676358'
+    steps:
+      - name: Check out selected source revision
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install Android SDK packages
+        shell: bash
+        run: |
+          sdkmanager --sdk_root="$ANDROID_HOME" --install \
+            "platforms;android-$ANDROID_PLATFORM_API" \
+            "build-tools;$ANDROID_BUILD_TOOLS_VERSION" \
+            "ndk;$ANDROID_NDK_VERSION"
+
+      - name: Build and verify unsigned APK
+        shell: bash
+        env:
+          IGARECK_UNSIGNED_ONLY: '1'
+        run: |
+          export IGARECK_JAVA_HOME="$JAVA_HOME_21_X64"
+          export IGARECK_ANDROID_JAR="$ANDROID_HOME/platforms/android-$ANDROID_PLATFORM_API/android.jar"
+          export IGARECK_BUILD_TOOLS="$ANDROID_HOME/build-tools/$ANDROID_BUILD_TOOLS_VERSION"
+          export IGARECK_NDK="$ANDROID_HOME/ndk/$ANDROID_NDK_VERSION"
+          bash android/build.sh
+
+      - name: Upload unsigned Android APK
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: Igareck-Android-11-Universal-unsigned
+          path: android/dist/Igareck_AntiDPI_v1.0_Android_11+_Universal.unsigned.apk
           if-no-files-found: error
           retention-days: 14
           compression-level: 0

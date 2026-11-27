@@ -1,5 +1,21 @@
 # Changelog / История изменений
 
+## 1.2 — Android v1.0 / Windows v1.0 / Linux v1.1
+
+| English | Русский |
+| --- | --- |
+| First public release for Android. | Первый публичный выпуск для Android. |
+| The v1.2 release also includes Windows v1.0 and Linux v1.1. The installers for both platforms are carried over from the v1.1 release. | В релиз v1.2 также входят Windows v1.0 и Linux v1.1. Установочные файлы обеих платформ совпадают с опубликованными в релизе v1.1. |
+| Activate the network module over Wi-Fi or over USB from a computer. | Активация сетевого модуля по Wi-Fi или через USB с компьютера. |
+| The USB screen shows the connection status and commands for Windows, Linux, and macOS. | Отдельный экран USB с текущим статусом и командами для Windows, Linux и macOS. |
+| Local SOCKS5 for VPN and Tor clients at `127.0.0.1:1080` by default. | Локальный SOCKS5 для VPN/Tor-клиентов. Адрес по умолчанию — `127.0.0.1:1080`. |
+| Select, start, apply, and stop TCP, QUIC, and Discord/STUN strategies. | Выбор/запуск/применение/остановка TCP/UDP/Discord стратегий. |
+| 484 TCP strategies (45 Golden and 439 Silver), QUIC Q1–Q5, and Discord/STUN D1–D8. | 484 TCP-стратегии (45 Golden и 439 Silver), QUIC Q1–Q5 и Discord/STUN D1–D8. |
+| TCP strategy checks for YouTube, Discord, LinkedIn, Facebook, X, and Threads with (pass) and (unstable) results. | Проверки TCP-стратегий для YouTube, Discord, LinkedIn, Facebook, X и Threads с метками (pass) и (unstable). |
+| Russian and English interfaces, VPN and Tor client guides, connection diagnostics, and log export. | Русский и английский интерфейсы, инструкции для VPN/Tor-клиентов, диагностика соединений и экспорт журналов. |
+| Light and dark themes, with a switch in Logs and licenses. | Светлая и тёмная темы с переключателем в «Логах и лицензиях». |
+| One signed APK for Android 11 and later on arm64-v8a, armeabi-v7a, and x86\_64. | Один подписанный APK для Android 11+ с arm64-v8a, armeabi-v7a и x86\_64. |
+
 ## 1.1 — Linux
 
 | English | Русский |

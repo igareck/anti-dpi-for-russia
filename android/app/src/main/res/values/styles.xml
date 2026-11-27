@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:forceDarkAllowed">false</item>
+        <item name="android:fontFamily">sans</item>
+        <item name="android:colorAccent">#49427F</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:windowBackground">#FFF2F5</item>
+        <item name="android:colorBackground">#FFF2F5</item>
+        <item name="android:navigationBarColor">#E8EDFF</item>
+        <item name="android:statusBarColor">#FFF2F5</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+        <item name="android:windowActionModeOverlay">true</item>
+    </style>
+    <style name="AppThemeDark" parent="android:style/Theme.Material.NoActionBar">
+        <item name="android:forceDarkAllowed">false</item>
+        <item name="android:fontFamily">sans</item>
+        <item name="android:colorAccent">#B88BC5</item>
+        <item name="android:textColorPrimary">#DAD0E0</item>
+        <item name="android:textColorSecondary">#B4A6C0</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:windowBackground">#100D1A</item>
+        <item name="android:colorBackground">#100D1A</item>
+        <item name="android:colorBackgroundFloating">#1D1528</item>
+        <item name="android:navigationBarColor">#1B1224</item>
+        <item name="android:statusBarColor">#100D1A</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+        <item name="android:windowActionModeOverlay">true</item>
+    </style>
+</resources>

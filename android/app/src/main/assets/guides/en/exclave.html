@@ -1,0 +1,40 @@
+<h3>Exclude Igareck AntiDPI from Exclave</h3>
+<p>1. Open the side menu ☰ → “Settings”.<br>
+Find “Route settings” and tap “Per-app VPN mode”.</p>
+<p>2. Select “Bypass” at the top, find <b>Igareck AntiDPI</b> and select it.<br>
+<b>Igareck AntiDPI</b> is now excluded from the Exclave VPN tunnel.</p>
+
+<h3>Add the local SOCKS5 profile</h3>
+<p>Open the side menu ☰ → “Configuration”.</p>
+<p>On the “Configuration” screen, tap <img src="file-plus" alt="+"> → “Manual settings” → “Other” → “SOCKS”.<br>
+Enter <b>Igareck_AntiDPI_Local</b> as the name, <b>127.0.0.1</b> as the server, <b>@PORT@</b> as the port and <b>SOCKS5</b> as the version.<br>
+Leave the username and password blank, then tap the “Apply” check mark.</p>
+
+<h3>Access websites through a VPN</h3>
+<p>1. Open the side menu ☰ → “Groups”.</p>
+<p>On the “Groups” screen, tap the pencil <img src="pencil" alt=""> beside your VPN subscription.<br>
+Open “Front proxy” → “Select profile…” and choose <b>Igareck_AntiDPI_Local</b>.<br>
+Leave “Landing proxy” set to “Disabled”.<br>
+Save the group settings with the “Apply” check mark.</p>
+<p>2. Return to the subscription or balancer tab (☰ → “Configuration”).</p>
+<p>3. If you already have a balancer and want to use it:</p>
+<p>On the “Configuration” screen, open the local group that contains the balancer.<br>
+This is usually “Ungrouped”.<br>
+Tap the pencil <img src="pencil" alt=""> beside the balancer to open its settings.<br>
+Enable “Use group front proxy”.<br>
+Save the settings with the “Apply” check mark.<br>
+Select the balancer and connect.</p>
+<p>4. To choose a profile in the subscription manually:</p>
+<p>Tap the subscription name at the top.<br>
+Open ⋮ → “Connection test” → “URL test” and wait for the test to finish.<br>
+Select a working VPN server and connect.<br>
+Exclave connects to it through the local Igareck SOCKS5 proxy.</p>
+
+<h3>Access websites directly</h3>
+<p>1. Open the side menu ☰ → “Configuration”.</p>
+<p>On the “Configuration” screen, open the local group where you saved the SOCKS5 profile.<br>
+This is usually “Ungrouped”.<br>
+Select <b>Igareck_AntiDPI_Local</b> and connect.</p>
+<p>2. Open the website you want (YouTube, Discord, LinkedIn or others), or use an app such as Discord.<br>
+Exclave sends its traffic through the local Igareck SOCKS5 proxy for a direct connection to the website.</p>
+<p class="note">For Discord voice, enable UDP over SOCKS and Discord/STUN in AntiDPI.</p>

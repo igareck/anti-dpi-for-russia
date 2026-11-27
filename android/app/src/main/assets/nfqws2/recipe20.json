@@ -1,0 +1,18 @@
+{
+  "Number": 20,
+  "Family": 2,
+  "Variant": 7,
+  "Name": "Разделённый TLS-фейк (SNI=dl.google.com; TS=-1000; pos=2; nodrop) + multisplit (ClientHello по частям; pos=1,midsld)",
+  "Processing": "TS",
+  "Chain": "multisplit + multisplit",
+  "Args": [
+    "--payload=tls_client_hello",
+    "--lua-desync=multisplit:blob=public_tls_pattern:tcp_ts=-1000:pos=2:nodrop:repeats=1",
+    "--lua-desync=multisplit:pos=1,midsld"
+  ],
+  "Init": "public_tls_pattern=assert(tls_mod(fake_default_tls,'sni=dl.google.com'),'experimental TLS SNI failed')",
+  "NeedsTimestamps": true,
+  "StockTlsPattern": true,
+  "PrefixOnly": false,
+  "RecipeSHA256": "83d544239c190b63cd0b60c9d1b721c2f7d0062fac93a8dbffd42f087b2d1449"
+}

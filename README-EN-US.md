@@ -1,19 +1,20 @@
-# `IGARECK ANTI-DPI`
-## `PROGRAM WITH READY-TO-USE ANTI-DPI STRATEGIES BASED ON BOL-VAN'S ZAPRET2`
-## `A SIMPLE CLI TOOL FOR BLACKLIST VPN SUBSCRIPTIONS + TOR`
+<h1 align="center"><code> IGARECK ANTI-DPI </code></h1>
 
-### Built to restore Blacklist VPN connectivity and get Tor Bridges (+ YouTube) working again in Russia. Made for everyday users.
-### Designed to bypass Roskomnadzor's TSPU traffic filters.
+<h2 align="center"><code> READY-TO-USE ANTI-DPI STRATEGIES FOR BLACKLIST VPN SUBSCRIPTIONS AND TOR </code></h2>
+
+<h3 align="center"> Built to restore Blacklist VPN configurations and Tor bridge connectivity in Russia </h3>
+<h3 align="center"> Designed to bypass Roskomnadzor's TSPU traffic filters </h3>
 
 <div align="center">
 
+[![Android 11+](https://img.shields.io/badge/Android_11%2B-3DDC84?style=for-the-badge&logo=android&logoColor=black)](https://github.com/igareck/anti-dpi-for-russia/releases)
 [![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=data:image/svg%2Bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiAxNiI%2BPHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0wIDBoN3Y3SDB6TTkgMGg3djdIOXpNMCA5aDd2N0gwek05IDloN3Y3SDl6Ii8%2BPC9zdmc%2B)](https://github.com/igareck/anti-dpi-for-russia/releases)
 [![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://github.com/igareck/anti-dpi-for-russia/releases)
 
 [![Telegram](https://img.shields.io/badge/Join_me_on-Telegram-26A5E4?style=flat-square&logo=telegram&logoColor=white)](https://t.me/igareq)
 [![Support me on Patreon](https://img.shields.io/badge/Support-Patreon-f96854?style=flat-square&logo=patreon&logoColor=white)](https://www.patreon.com/igareck/shop)
 
-**🌐 Language: [Русский](README.md) | [English](README-EN-US.md)**
+**🌐 Язык: [Русский](README.md) | 🌐 Language: [English](README-EN-US.md)**
 
 </div>
 
@@ -24,75 +25,151 @@
 </div>
 
 ```diff
-+ This program was built to get public VPN/Tor subscriptions working again!
-- Accessing YouTube, Discord, Facebook, LinkedIn, and X (Twitter) without a VPN
-- with some Golden strategies is a nice bonus, but not the main focus of this project.
++ This program was originally developed to restore access to public VPN subscriptions and Tor bridges.
+- Direct access to YouTube, Discord, Facebook, LinkedIn, and X (Twitter) without a VPN
+- is an additional benefit of some strategies.
 ```
 
-### **`Can this program get VPN subscriptions and even Tor bridges working again in Russia?`**
+### **`Can this program get Blacklist VPN subscriptions and Tor bridges working again in Russia?`**
 
-**It can bring unusable subscriptions back to life.**
+**It can help restore access to VPN servers and Tor bridges.**
 
-**If none of your configurations work, or only one or two out of a long list do - give it a try!**
+**Try Igareck AntiDPI if a large VPN subscription has only a couple of reachable servers, or none respond to latency tests, or Tor bridges are slow.**
 
-To use Blacklist VPN subscriptions or connect to Tor bridges, start **Igareck AntiDPI** first. Try the strategies one at a time, then run the ping or latency checks for your subscriptions or bridges in your client.
-Some strategies will get more VPN configurations working than others. The best choice depends on your connection, so you will need to try them yourself. Start with the Golden strategies.
+Start **Igareck AntiDPI**, apply one strategy at a time, and test your VPN subscription or Tor bridge in your client. The number of reachable VPN servers varies by strategy. Start with the first Golden strategies and compare the results on your connection.
 
-For example, Tor bridges can connect faster with **Igareck AntiDPI** running, and obfs4 bridges may work on connections where they previously failed.
+For example, Tor bridges can connect faster and transfer data at higher speeds. An obfs4 bridge may also work on a connection where it previously failed.
 
 ### **`How can I check whether Igareck AntiDPI is working?`**
 
-1. First, run a latency test on the blacklist (BL) subscriptions **[BLACK_VLESS_RUS_mobile.txt](https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS_mobile.txt)**, **[BLACK_SS+All_RUS.txt](https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_SS%2BAll_RUS.txt)**, or **[BLACK_VLESS_RUS.txt](https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS.txt)** over an unrestricted network with **Igareck AntiDPI** disabled.
-2. Then enable **Igareck AntiDPI** and select a strategy, starting with **Golden**.
-3. Run the latency test in your VPN client again.
-4. Compare the results to see how many more configurations are working.
+1. First, run a latency test on **[BLACK_VLESS_RUS_mobile.txt](https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS_mobile.txt)**, **[BLACK_SS+All_RUS.txt](https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_SS%2BAll_RUS.txt)**, or **[BLACK_VLESS_RUS.txt](https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS.txt)** with **Igareck AntiDPI** disabled.
+2. Enable **Igareck AntiDPI** and select a strategy, starting with the first **Golden** strategies.
+3. Run the latency test again in your VPN client.
+4. Compare the number of reachable servers.
 5. **Profit!**
 
-### **`Which VPN/Tor clients are compatible with Igareck AntiDPI?`**
+### **`Which VPN and Tor clients are compatible with Igareck AntiDPI?`**
 
-**Any client:** **[Karing](https://github.com/KaringX/karing/releases), [v2rayN](https://github.com/2dust/v2rayN/releases), [Throne](https://github.com/throneproj/Throne/releases), [Clash Verge Rev](https://github.com/clash-verge-rev/clash-verge-rev/releases), [OnionHop V3](https://github.com/center2055/OnionHop/releases), [OnionFruit](https://github.com/dragonfruitnetwork/onionfruit/releases/latest)** and more.
+**Any client**, including **[Karing](https://github.com/KaringX/karing/releases), [v2rayN](https://github.com/2dust/v2rayN/releases), [v2rayNG](https://github.com/2dust/v2rayNG/releases), [Exclave](https://github.com/ExclaveNetwork/Exclave/releases), [Throne](https://github.com/throneproj/Throne/releases), [Clash Verge Rev](https://github.com/clash-verge-rev/clash-verge-rev/releases), [FlClash](https://github.com/chen08209/FlClash/releases), [OnionHop V3](https://github.com/center2055/OnionHop/releases), [OnionFruit](https://github.com/dragonfruitnetwork/onionfruit/releases/latest), [Orbot](https://github.com/guardianproject/orbot-android/releases), and [InviZible Pro](https://github.com/Gedsh/InviZible/releases)**.
 
-No special settings are required. It simply runs in the background.
+On **Windows and Linux**, the program runs in the background with its default settings.
+
+On **Android**, the VPN or Tor client connects to the local SOCKS5 proxy at `127.0.0.1:1080`.
 
 ### **`What strategies are included? What do Golden and Silver mean?`**
 
-**484 strategies:** 45 Golden + 439 Silver, organized into 23 families.
+**484 strategies** across 23 families, including 45 Golden and 439 Silver strategies.
 
 See **[README_Стратегии_Windows_v1.0.txt](windows/README_Стратегии_Windows_v1.0.txt)** for a detailed guide to all strategies.
 
-Golden strategies may be more effective at bypassing TSPU filtering and can perform better than Silver for VPNs, Tor, and YouTube.
+Golden strategies may work more reliably than Silver for VPNs and Tor or for direct access to sites such as YouTube, Discord, and LinkedIn.
 
-### **`Can I watch YouTube on my PC with Igareck AntiDPI, without a VPN?`**
+### **`Can I use Igareck AntiDPI to watch YouTube on my PC without a VPN?`**
 
-Yes. In the menu that lets you enter a `strategy number` or `YouTube`, type `YouTube` to run the automatic strategy check. Strategies marked `PASS` should let you open YouTube in your browser without a VPN.
+On Windows and Linux, enter `YouTube` in the strategy menu to run the automated check. Strategies marked `PASS` should let you open YouTube in a browser without a VPN.
 
-**The main purpose of `Igareck AntiDPI` is to restore VPN/Tor connectivity. Direct access to YouTube is a nice bonus.** Some Golden strategies may also provide access to Discord, LinkedIn, Facebook, Threads, X.com, and parts of the Tor Project website.
+On Android, use **Website checks** to test YouTube and other sites.
 
-### **`Does a successful YouTube check mean that a strategy will get more VPN configurations working?`**
-   
-Not necessarily. Passing the YouTube check does not mean a strategy will outperform the others with VPN configurations.
+**The main purpose of Igareck AntiDPI is to restore VPN and Tor connectivity.** Direct access to YouTube is an additional benefit. Some Golden strategies may also open Discord, LinkedIn, Facebook, Threads, X.com, and parts of the Tor Project website.
 
-A strategy may fail to provide direct access to YouTube yet still get the most VPN configurations working (respond to latency checks and pass traffic).
+### **`Can I make Discord calls with Igareck AntiDPI without a VPN?`**
+
+Yes. On Android, enable **UDP over SOCKS** and **Discord/STUN** and choose a strategy for each. 
+
+Windows and Linux currently support TCP strategies. Discord voice support is planned for those platforms.
+
+After changing a strategy, tap the round **Start / Apply** button again to apply it.
+
+### **`Does a successful check for YouTube, Discord, or LinkedIn mean a strategy will restore more VPN servers?`**
+
+Test direct website access and VPN subscription connectivity separately. A strategy may fail to open YouTube directly and still make the most VPN servers reachable.
 
 ### **`What is the program based on, and what makes it useful?`**
 
-The program uses the [Zapret2](https://github.com/bol-van/zapret2) engine developed by [Bol-Van](https://github.com/bol-van).
+The program uses [Zapret2](https://github.com/bol-van/zapret2) by [Bol-Van](https://github.com/bol-van), [Lua 5.4.9](https://lua.org/) on Android, [LuaJIT](https://luajit.org/) on Windows and Linux, [Shizuku-API](https://github.com/RikkaApps/Shizuku-API), [WinDivert](https://github.com/basil00/WinDivert), [Cygwin](https://cygwin.com/git.html), and other components.
 
-**Igareck AntiDPI** comes with ready-to-use strategies for bypassing TSPU filtering. You only need to find the one that works best for you, rather than build a strategy from scratch.
+**Igareck AntiDPI** comes with ready-to-use TCP, UDP, and Discord strategies. Choose the one that works best on your connection.
 
-The program and its strategies have been tested on mobile and wired internet connections in Russia. It is intended for people using public VPN/Tor subscriptions and accessing YouTube in Russia.
+The program and its strategies have been tested on mobile and wired networks in Russia. It is intended for users of public VPN subscriptions and Tor bridges and for people accessing YouTube and Discord.
 
-The command-line interface (CLI) is designed for everyday users, with straightforward menus for configuring, selecting, testing, and restarting strategies while the program is running. You do not need to know terminal commands. Just enter the requested `number`, `да`/`нет` (yes/no), or `youtube`; the prompts tell you what to do.
+On Android, Windows, and Linux, menus let you configure, select, test, and restart strategies while the program is running.
+
+The desktop CLI guides you through each step. Enter the requested `number`, `да` or `нет` (`yes` or `no`), or `youtube`.
 
 ### `Which platforms are supported?`
 
-**[Windows 10/11 x64](https://github.com/igareck/anti-dpi-for-russia/releases)** ★ **[Linux Ubuntu/Debian x64](https://github.com/igareck/anti-dpi-for-russia/releases)**
-
-An Android version is planned.
+**[Android 11+](https://github.com/igareck/anti-dpi-for-russia/releases)** ★ **[Windows 10/11 x64](https://github.com/igareck/anti-dpi-for-russia/releases)** ★ **[Linux Ubuntu/Debian x64](https://github.com/igareck/anti-dpi-for-russia/releases)**
 
 ---
 
 ## Installation and Getting Started
+
+## `Android 11+`
+
+<details>
+<summary><code> Click to expand </code></summary>
+
+㋡
+
+The universal `Igareck_AntiDPI_v1.0_Android_11+_Universal.apk` supports Android 11 and later on `arm64-v8a`, `armeabi-v7a`, and `x86_64`.
+
+Igareck AntiDPI listens on a local SOCKS5 proxy for your VPN or Tor client. The default port is `1080`.
+
+### 1. Install the APK
+
+**[Download Android v1.0 (APK)](https://github.com/igareck/anti-dpi-for-russia/releases/tag/v1.2)**
+
+Open the downloaded APK and confirm installation. If Android asks you to allow installation from this source, grant permission to the app you used to open the APK.
+
+### 2. Activate the network module
+
+Enable Android Developer options, then open **Network module** on the main screen.
+
+In Android Settings, find **Build number** under device information and tap it seven times to enable Developer options.
+
+**You can activate the module over Wi-Fi or over USB from a computer.**
+
+### **Over Wi-Fi**
+
+1. Connect to a Wi-Fi network. An internet connection is optional for pairing.
+2. Enable **Wireless debugging** in Developer options.
+3. In Igareck AntiDPI, open **Network module** and allow notifications for entering the pairing code.
+4. Tap **Start pairing**.
+5. Open **Developer options → Wireless debugging** and select **Pair device with pairing code**.
+6. Keep the Android code dialog open. Enter the six-digit code in the Igareck notification and tap **Send**.
+7. Return to the activation screen and wait for **Network module active**.
+8. If automatic pairing fails, use the manual port and code fields on the activation screen.
+
+The **Network module** screen also walks through these steps.
+
+### **Over USB from a computer**
+
+1. Enable **USB debugging** in Developer options. Use a data cable to connect the unlocked device to your computer and confirm Android's **Allow USB debugging?** prompt.
+2. Download and extract **[Android SDK Platform-Tools](https://developer.android.com/tools/releases/platform-tools)** for your computer.
+3. In Igareck AntiDPI, open **Network module → Activate via USB (with a computer when Wi-Fi is unavailable)** and follow the steps. The app and the **[USB guide in Russian](android/USB_ACTIVATION_RU.txt)** list the commands for Windows, Linux, and macOS.
+
+### 3. Set up your client and start a strategy
+
+1. Open **Instructions** in the Android app and choose your client.
+
+   Exclude Igareck AntiDPI from the apps routed through the VPN client to prevent a routing loop.
+
+   Add a local SOCKS5 profile at `127.0.0.1:1080`.
+
+   Configure the client to access sites through the VPN or directly.
+
+2. Start with the Golden group and choose a TCP strategy. Tap the round **Start / Apply** button to start it. Tap it again after changing a strategy.
+
+   For direct Discord voice calls, enable **UDP over SOCKS** and **Discord/STUN**, then choose both strategies.
+
+3. In **Website checks**, test TCP strategies for direct access to YouTube, Discord, LinkedIn, Facebook, X, and Threads. Turn off the VPN client while testing.
+
+   Test VPN servers and Tor bridges in their respective clients separately from the website checks.
+
+4. Tap **Stop** to stop the strategy. To shut down the module itself, open **Network module → Stop network module**.
+5. Open **Logs and licenses** for diagnostics, log export, and full license texts.
+
+</details>
 
 ## `Windows 10/11 x64`
 
@@ -103,12 +180,12 @@ An Android version is planned.
   
 ### **1. Run the installer.**
 
-**[INSTALL USING THE EXE](https://github.com/igareck/anti-dpi-for-russia/releases/download/v1.0/Igareck_AntiDPI_CLI_v1.0_Windows_x64.exe)**
+**[INSTALL USING THE EXE](https://github.com/igareck/anti-dpi-for-russia/releases/download/v1.2/Igareck_AntiDPI_CLI_v1.0_Windows_x64.exe)**
 
 Double-click **Igareck_AntiDPI_CLI_v1.0_Windows_x64.exe**.
 Approve the request to run as administrator.
 
-**[INSTALL FROM THE ZIP ARCHIVE](https://github.com/igareck/anti-dpi-for-russia/releases/download/v1.0/Igareck_AntiDPI_CLI_v1.0_Windows_x64.zip)**
+**[INSTALL FROM THE ZIP ARCHIVE](https://github.com/igareck/anti-dpi-for-russia/releases/download/v1.2/Igareck_AntiDPI_CLI_v1.0_Windows_x64.zip)**
 
 Extract **Igareck_AntiDPI_CLI_v1.0_Windows_x64.zip**, open the **Igareck_AntiDPI_CLI_v1.0_Windows_x64** folder, and run **УСТАНОВКА.cmd**.
 Approve the request to run as administrator.
@@ -271,7 +348,7 @@ Stops the current *winws2.exe* process and exits the program.
 
 ### **1. Run the installer.**
 
-**[INSTALL FROM THE TAR.GZ ARCHIVE](https://github.com/igareck/anti-dpi-for-russia/releases/download/v1.1/Igareck_AntiDPI_CLI_v1.1_Linux_x64.tar.gz)**
+**[INSTALL FROM THE TAR.GZ ARCHIVE](https://github.com/igareck/anti-dpi-for-russia/releases/download/v1.2/Igareck_AntiDPI_CLI_v1.1_Linux_x64.tar.gz)**
 
 Open a terminal in the folder containing the downloaded archive and run:
 
@@ -464,6 +541,8 @@ If you installed the program elsewhere, replace `/opt/igareck-antidpi` with your
 
 Instructions for building the **Windows ZIP/EXE** and **Linux TAR.GZ** packages from source are in **[packaging/BUILDING.md](packaging/BUILDING.md)**.
 
+See the **[Android build guide](android/BUILDING.md)** for the APK.
+
 Ready-to-install packages are available in **[Releases](https://github.com/igareck/anti-dpi-for-russia/releases)**.
 
 ---
@@ -473,6 +552,8 @@ Ready-to-install packages are available in **[Releases](https://github.com/igare
 ## 🔖 License
 
 Licensed under GPL-3.0. See **[`LICENSE`](LICENSE)** for the full text.
+
+See third-party notices for **[Windows and Linux](THIRD_PARTY_NOTICES.md)** and **[Android](android/THIRD_PARTY_NOTICES.md)**.
 
 ## <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2wwMmJ3bDZvMWV2b2JraXZ4ZWk2Y2I5ODYyZ2M2aG5mMHc5ZW81ZyZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/ME8P6ce7Mn3gnRbird/giphy.gif" width="30"> `Support the Author`
 

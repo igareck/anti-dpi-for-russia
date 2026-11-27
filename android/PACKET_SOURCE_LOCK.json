@@ -1,0 +1,60 @@
+{
+  "android_scan_isolation": {
+    "filter": "--filter-mark",
+    "immutable_recipe_records": true,
+    "lua_pattern_globals": "public_tls_pattern_T<number>",
+    "normal_proxy_mark": 0,
+    "parallel_listeners": "1–5"
+  },
+  "discord_catalogue": {
+    "candidates": 10,
+    "catalogue_sha256": "159ed427c49515826d5e6a2584c69e380eafcb88a117c0ab9a69e92ba0a78d78",
+    "control": "D0",
+    "upstream_source_unchanged": true
+  },
+  "patches": [
+    "vendor/nfqws2/nfq2/nfqws.h",
+    "vendor/nfqws2/nfq2/nfqws.c",
+    "vendor/nfqws2/nfq2/darkmagic.c",
+    "vendor/nfqws2/nfq2/desync.c",
+    "vendor/nfqws2/nfq2/params.c",
+    "vendor/nfqws2/lua/zapret-lib.lua",
+    "vendor/lwip/src/core/tcp_in.c",
+    "native SOCKS5 UDP ASSOCIATE in the lwIP owner loop; connected remote UDP PCBs",
+    "physical fragmentation after core processing, preserving original TCP MTU/MSS",
+    "skip ct_new_postnat_fix Linux workaround only for IGARECK_TAP"
+  ],
+  "quic_catalogue": {
+    "catalogue_sha256": "176404d7e4856af7d1378020f6014869a0323c99977a0e8a0f948161cd680c48",
+    "profiles": 5
+  },
+  "recipe20_sha256": "83d544239c190b63cd0b60c9d1b721c2f7d0062fac93a8dbffd42f087b2d1449",
+  "runtime_downloads": false,
+  "tcp_catalogue": {
+    "actual_tls_guard_sha256": "314f436bdd9a0e93a857452019f0d2ddd8a40a43deec42a9357f6a9f35c96e9e",
+    "git_commit": "67c57d9e332b224c57c4f27c3087e3fcdc9f0482",
+    "sha256": "6790030c69ab74255003e4c7e5a331edb3bb6d5dfac4efaf3bfb004dc358d029"
+  },
+  "upstream_archives": [
+    {
+      "archive": "zapret2.tar.gz",
+      "git_archive_comment": "038c97e5819df10f8e8c22a2f1fffe57f2f7379b",
+      "sha256": "f31711fa2dc94135bd295542c8024e5db8f6adf71d4c542f7289f3e04347e29d"
+    },
+    {
+      "archive": "lwip.tar.gz",
+      "git_archive_comment": "77dcd25a72509eb83f72b033d219b1d40cd8eb95",
+      "sha256": "ce0b7461c0ad9602c376f0bf07c5eb7253b48c7bf66f011c6bf3e2a96731c539"
+    },
+    {
+      "archive": "lua-git.tar.gz",
+      "git_archive_comment": "312b9efaa1061c2c4cad08554dbc1351c3270eef",
+      "sha256": "76def9b3b100e029bfbe37c985d869d0ed993a0cf1a157df282d6dcd9d6a4e15"
+    },
+    {
+      "archive": "igareck.tar.gz",
+      "git_archive_comment": "67c57d9e332b224c57c4f27c3087e3fcdc9f0482",
+      "sha256": "b7884169faf7be9efc32ee926b1de4c96cf19f0b2879cb00c6e77934b4a5c77c"
+    }
+  ]
+}

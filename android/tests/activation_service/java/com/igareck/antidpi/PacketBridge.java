@@ -1,0 +1,1 @@
+package com.igareck.antidpi;public class PacketBridge {static volatile int calls;static boolean fail;static void activateUsb()throws Exception{activate();}static void shutdownWorker()throws Exception{activate();}static void activate()throws Exception{calls++;if(fail)throw new java.io.IOException("fixture");}}
